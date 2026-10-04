@@ -41,7 +41,9 @@ with one of the colors above.
 
 - Cursor row: yellow `▌` at the left edge and a `#3c3836` background.
 - Checkbox: `[x]` green bold when on, `[ ]` in text color when off.
-- Name in bold, then a plain description of what it is, 1 to 3 words.
+- Name in bold, then a plain label of what it is, 1 to 3 words.
+- A details box under the grid describes the highlighted item in one plain
+  sentence of what it does, up to 2 lines. Its title is the item's name.
 
 ## Keys
 

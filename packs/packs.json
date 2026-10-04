@@ -2,38 +2,123 @@
   {
     "title": "serious art tools",
     "apps": [
-      { "name": "Krita", "pkg": "krita" },
-      { "name": "Blender", "pkg": "blender" },
-      { "name": "Pictogrep", "pkg": "pictogrep" },
-      { "name": "Inkscape", "pkg": "inkscape" },
-      { "name": "GIMP", "pkg": "gimp" },
-      { "name": "Aseprite", "pkg": "aseprite" }
+      {
+        "name": "Krita",
+        "pkg": "krita",
+        "label": "painting",
+        "about": "Digital painting and drawing, with brushes, layers and frame-by-frame animation."
+      },
+      {
+        "name": "Blender",
+        "pkg": "blender",
+        "label": "3D",
+        "about": "3D modeling, sculpting, animation and rendering, plus video editing."
+      },
+      {
+        "name": "Pictogrep",
+        "pkg": "pictogrep",
+        "label": "picture search",
+        "about": "Finds your local pictures from a plain-language description and turns references into rough storyboards."
+      },
+      {
+        "name": "Inkscape",
+        "pkg": "inkscape",
+        "label": "vector drawing",
+        "about": "Vector drawing for logos, icons and illustrations that scale to any size."
+      },
+      {
+        "name": "GIMP",
+        "pkg": "gimp",
+        "label": "photo editing",
+        "about": "Photo editing and retouching, with layers, masks and filters."
+      },
+      {
+        "name": "Aseprite",
+        "pkg": "aseprite",
+        "label": "pixel art",
+        "about": "Pixel art and pixel animation, with onion skin and sprite sheet export."
+      }
     ]
   },
   {
     "title": "fun tinkering tools",
     "apps": [
-      { "name": "Godot", "pkg": "godot_4" },
-      { "name": "LÖVE", "pkg": "love" },
-      { "name": "TIC-80", "pkg": "tic-80" },
-      { "name": "Pure Data", "pkg": "puredata" },
-      { "name": "Orca", "pkg": "orca-c" },
-      { "name": "Processing", "pkg": "processing" }
+      {
+        "name": "Godot",
+        "pkg": "godot_4",
+        "label": "game engine",
+        "about": "Game engine for 2D and 3D games, with its own editor and scripting language."
+      },
+      {
+        "name": "LÖVE",
+        "pkg": "love",
+        "label": "2D games",
+        "about": "Makes 2D games from small Lua scripts."
+      },
+      {
+        "name": "TIC-80",
+        "pkg": "tic-80",
+        "label": "fantasy console",
+        "about": "A tiny retro computer for making games, with built-in code, sprite, map and music editors."
+      },
+      {
+        "name": "Pure Data",
+        "pkg": "puredata",
+        "label": "sound patching",
+        "about": "Makes sound and music by connecting boxes in a visual patch."
+      },
+      {
+        "name": "Orca",
+        "pkg": "orca-c",
+        "label": "live sequencer",
+        "about": "Live coding sequencer: a grid of letters that sends notes to synths."
+      },
+      {
+        "name": "Processing",
+        "pkg": "processing",
+        "label": "creative coding",
+        "about": "Code sketches that draw and animate, made for artists learning to program."
+      }
     ]
   },
   {
     "title": "writing tools",
     "apps": [
-      { "name": "Obsidian", "pkg": "obsidian" },
-      { "name": "Typst", "pkg": "typst" }
+      {
+        "name": "Obsidian",
+        "pkg": "obsidian",
+        "label": "notes",
+        "about": "Notes in plain Markdown files that link to each other."
+      },
+      {
+        "name": "Typst",
+        "pkg": "typst",
+        "label": "typesetting",
+        "about": "Turns plain text markup into typeset PDFs, like a faster LaTeX."
+      }
     ]
   },
   {
     "title": "video and sound tools",
     "apps": [
-      { "name": "Kdenlive", "pkg": "kdePackages.kdenlive" },
-      { "name": "OBS Studio", "pkg": "obs-studio" },
-      { "name": "Audacity", "pkg": "audacity" }
+      {
+        "name": "Kdenlive",
+        "pkg": "kdePackages.kdenlive",
+        "label": "video editing",
+        "about": "Video editing with a timeline, effects and titles."
+      },
+      {
+        "name": "OBS Studio",
+        "pkg": "obs-studio",
+        "label": "recording",
+        "about": "Records your screen and camera, or streams them live."
+      },
+      {
+        "name": "Audacity",
+        "pkg": "audacity",
+        "label": "audio editing",
+        "about": "Records and edits audio: cut, clean up and mix sound."
+      }
     ]
   }
 ]

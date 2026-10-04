@@ -4,7 +4,7 @@
   "logo": {
     "type": "file",
     "source": "~/projects/kunstOS/dotfiles/fastfetch/logo.txt",
-    "color": { "1": "white", "2": "red", "3": "yellow", "4": "green", "5": "blue", "6": "magenta" },
+    "color": { "1": "yellow" },
     "padding": { "top": 1, "left": 2, "right": 4 }
   },
   "display": {

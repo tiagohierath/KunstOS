@@ -6,14 +6,14 @@ Canon languages: Portuguese (Brazil) and English. Everything ships in both, more
 
 ## Ship v1, in order
 
-- [ ] 1. System flake (milestone 1): stable NixOS 26.05, unfree allowed, tiled niri, KunstOS defaults installed system-wide (/etc/xdg, /etc/niri), packages, Recursive fonts, ComixCursors-KunstOS, wallpaper, audio, Wi-Fi, Bluetooth, no hardcoded home paths or keyboard layout, apps read from /etc/nixos/kunstos-apps.json. Done when a VM boots into the KunstOS desktop.
+- [ ] 1. System flake (milestone 1): stable NixOS 26.05, unfree allowed, tiled niri, KunstOS defaults installed system-wide (/etc/xdg, /etc/niri), packages, Recursive fonts, ComixCursors-KunstOS, wallpaper, audio, Wi-Fi, Bluetooth, yazi + Thunar + Helix (EDITOR), no hardcoded home paths or keyboard layout, apps read from /etc/nixos/kunstos-apps.json. Done when a VM boots into the KunstOS desktop.
 - [ ] 2. Boot and login screens: made in modules/screens.nix (plain text boot in Gruvbox console colors, boot entries named KunstOS, ReGreet with the painting + dotfiles/regreet/regreet.css); check in the VM
 - [ ] 3. Lock screen and idle: made (dotfiles/hypr/hyprlock.conf, hypridle.conf, Super+Alt+L); check in the VM
-- [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake
+- [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake; opens by itself on the first login (fresh installs have only the desktop)
 - [ ] 5. Fonts: done in modules/fonts.nix and the dotfiles (PxPlus ToshibaSat 9x16 12 pt for most things, whole Oldschool PC Font Pack installed, Recursive for app interfaces, Noto fallbacks); check in the VM
 - [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs, plus a way to switch (can slip to v1.1)
 - [ ] 7. Live ISO that boots into KunstOS
-- [ ] 8. Graphical installer customized for KunstOS (Calamares with KunstOS branding, installs the KunstOS flake); needs an SVG of the K logo
+- [ ] 8. Installer: Calamares with the KunstOS look (colors, logo, wording), installs the KunstOS flake; needs an SVG of the K logo
 - [ ] 9. Real hardware test from a USB stick: Wi-Fi, suspend and lock, tablet pressure in Krita
 - [ ] 10. Release docs: manual and tips for people coming from Windows (shortcuts and the rest); audience is tinkerers, not people who only use a browser
 - [ ] 11. Release: README with screenshots, credits and licenses (Shishkin wallpaper, GPL cursor, CC BY-SA Oldschool PC fonts, OFL Recursive), ISO and checksum as a GitHub release, push

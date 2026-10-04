@@ -5,3 +5,4 @@
 - [ ] App menu: grid launcher like KDE/Fedora layout (search top, big icons + names); fuzzel cannot grid, prototyping rofi
 - [x] fastfetch: KunstOS ASCII logo + config (dotfiles/fastfetch). Logo APPROVED: 13-line serif K, `jp2a --invert --height=13 k-source.jpg`
 - [x] fastfetch 2x version: scrapped (too silly), standard config.jsonc is the only one
+- [x] fastfetch: K inside a circle, tried and dropped; plain K stays

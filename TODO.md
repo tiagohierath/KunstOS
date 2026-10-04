@@ -20,4 +20,4 @@
 - [ ] App installer TUI: scripts/kunst-apps (gum + jq), packs/packs.json; pick apps or "All <pack>"; writes /etc/nixos/kunstos-apps.json + nixos-rebuild (milestone 1 must read it; Pictogrep from its flake; Aseprite+Obsidian are unfree)
 - [ ] TUI standard for KunstOS (docs/tui.md) + rebuild kunst-apps to it, "way way more pretty"
 - [ ] kunst-apps: show a longer description (one sentence) of the highlighted app
-- [x] Add Our Paint (wellobserve.com) to the fun tinkering tools pack; NOT in nixpkgs: package the v0.5 Linux AppImage (GPL-3.0, by Wu Yiming; source repo is SSH-only)
+- [x] Our Paint: removed for now (not in nixpkgs; would need its v0.5 Linux AppImage packaged, GPL-3.0)

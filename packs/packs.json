@@ -1,0 +1,39 @@
+[
+  {
+    "title": "serious art tools",
+    "apps": [
+      { "name": "Krita", "pkg": "krita" },
+      { "name": "Blender", "pkg": "blender" },
+      { "name": "Pictogrep", "pkg": "pictogrep" },
+      { "name": "Inkscape", "pkg": "inkscape" },
+      { "name": "GIMP", "pkg": "gimp" },
+      { "name": "Aseprite", "pkg": "aseprite" }
+    ]
+  },
+  {
+    "title": "fun tinkering tools",
+    "apps": [
+      { "name": "Godot", "pkg": "godot_4" },
+      { "name": "LÖVE", "pkg": "love" },
+      { "name": "TIC-80", "pkg": "tic-80" },
+      { "name": "Pure Data", "pkg": "puredata" },
+      { "name": "Orca", "pkg": "orca-c" },
+      { "name": "Processing", "pkg": "processing" }
+    ]
+  },
+  {
+    "title": "writing tools",
+    "apps": [
+      { "name": "Obsidian", "pkg": "obsidian" },
+      { "name": "Typst", "pkg": "typst" }
+    ]
+  },
+  {
+    "title": "video and sound tools",
+    "apps": [
+      { "name": "Kdenlive", "pkg": "kdePackages.kdenlive" },
+      { "name": "OBS Studio", "pkg": "obs-studio" },
+      { "name": "Audacity", "pkg": "audacity" }
+    ]
+  }
+]

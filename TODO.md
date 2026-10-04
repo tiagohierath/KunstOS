@@ -11,3 +11,5 @@
 - [ ] Fonts: use ALL of Recursive's variants (Mono/Sans, Casual/Linear, weights, slant, cursive axes) across the system, not just Recursive Mono
 - [x] Default wallpaper: Shishkin, The Forest Clearing (1896), 4316x2880 original from Wikimedia Commons, wallpapers/default.jpg
 - [ ] Live test: KunstOS wallpaper on Tiago's desktop (fill mode: never stretch, never black borders)
+- [ ] Window close animation: TV shutting off / book closing rotated 90deg (top+bottom fold to a line, then line to a dot), cool easing; niri custom shader
+- [x] Windows open instantly (window-open off, dotfiles/niri/animations.kdl)

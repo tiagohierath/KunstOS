@@ -85,12 +85,6 @@
     "title": "writing tools",
     "apps": [
       {
-        "name": "Obsidian",
-        "pkg": "obsidian",
-        "label": "notes",
-        "about": "Notes in plain Markdown files that link to each other."
-      },
-      {
         "name": "Typst",
         "pkg": "typst",
         "label": "typesetting",

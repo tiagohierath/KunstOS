@@ -11,7 +11,7 @@ Canon languages: Portuguese (Brazil) and English. Everything ships in both, more
 - [ ] 3. Lock screen and idle: made (dotfiles/hypr/hyprlock.conf, hypridle.conf, Super+Alt+L); check in the VM
 - [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake; opens by itself on the first login (fresh installs have only the desktop)
 - [ ] 5. Fonts: done in modules/fonts.nix and the dotfiles (PxPlus ToshibaSat 9x16 12 pt for most things, whole Oldschool PC Font Pack installed, Recursive for app interfaces, Noto fallbacks); check in the VM
-- [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs, plus a way to switch (can slip to v1.1)
+- [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs; Super+Shift+I switches (can slip to v1.1)
 - [ ] 7. Live ISO that boots into KunstOS
 - [ ] 8. Installer: Calamares with the KunstOS look (colors, logo, wording), installs the KunstOS flake; needs an SVG of the K logo
 - [ ] 9. Real hardware test from a USB stick: Wi-Fi, suspend and lock, tablet pressure in Krita
@@ -26,6 +26,8 @@ Canon languages: Portuguese (Brazil) and English. Everything ships in both, more
 
 ## Later
 
+- Ship a lot of Tiago's own software on KunstOS (how: to be decided)
+- Strudel launcher in the tinkering pack (opens strudel.cc), not confirmed
 - GTK theme and icons beyond dark by default
 - Our Paint (not in nixpkgs; package its v0.5 Linux AppImage, GPL-3.0)
 - Website
@@ -52,3 +54,4 @@ Canon languages: Portuguese (Brazil) and English. Everything ships in both, more
 - Sketchbook layout with page turns
 - Floating windows by default
 - Our Paint, for now
+- Obsidian, for now

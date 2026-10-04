@@ -1,9 +1,4 @@
-// KunstOS animations: windows open and close instantly.
+// KunstOS animations: none for now.
 animations {
-    window-open {
-        off
-    }
-    window-close {
-        off
-    }
+    off
 }

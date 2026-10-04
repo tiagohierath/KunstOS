@@ -77,5 +77,6 @@ work as printed on them.
 
 | Keys | What it does |
 |---|---|
+| Super+Alt+L | Locks the screen. It also locks by itself after 10 minutes, and before the computer sleeps |
 | Super+Shift+E | Logs out. It asks first |
 | Super+Escape | Lets the app in front receive the Super key, for virtual machines and remote desktops. Press it again to get your shortcuts back |

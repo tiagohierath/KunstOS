@@ -1,5 +1,7 @@
 # KunstOS decisions
 
+> **Done, 2026-10-04:** the fun tinkering pack now installs on the first login, not during the install (niri runs `kunst-defaults` once, in a kitty window, then marks the login as done in `~/.local/state/kunstos/`).
+>
 > **Priority, 2026-10-04:** the system needs to be installed as fast as possible. Period. All other tools get installed later, not during the install. This overrides the default-install rows below: nothing except the system itself goes into the install.
 
 Made by Tiago on 2026-10-04.

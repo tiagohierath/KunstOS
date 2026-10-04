@@ -1,0 +1,17 @@
+/* KunstOS login screen: Gruvbox, square corners */
+* {
+    border-radius: 0;
+}
+
+frame {
+    background-color: #282828;
+    color: #ebdbb2;
+    border: 1px solid #83a598;
+}
+
+entry,
+button,
+dropdown button {
+    background-color: #3c3836;
+    color: #ebdbb2;
+}

@@ -1,0 +1,156 @@
+// KunstOS niri config: a copy of Tiago's dotfiles/niri/config.kdl.
+// Each workspace is a sketchbook and its windows are the pages, so windows tile
+// in the row instead of floating. Changed: binds use Mod (Super, or Alt when niri runs in a
+// window), no animations, KunstOS waybar/mako/wallpaper/cursor, no personal
+// scripts, no hardcoded outputs, no plain F-key binds (Krita and Blender use them).
+
+input {
+    keyboard {
+        xkb {
+            layout "br"
+            variant "abnt2"
+            options "caps:swapescape"
+        }
+    }
+
+    touchpad {
+        tap
+        dwt
+        scroll-factor 2.0
+        accel-speed 0.5
+        accel-profile "adaptive"
+    }
+
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+cursor {
+    xcursor-theme "ComixCursors-KunstOS"
+}
+
+layout {
+    gaps 2
+    default-column-width { proportion 0.5; }
+    center-focused-column "never"
+    background-color "transparent"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    focus-ring { off; }
+    border {
+        on
+        width 1
+        active-color "#ebdbb2"
+        inactive-color "#ffffff80"
+    }
+    tab-indicator {
+        on
+        place-within-column
+        position "left"
+        width 4
+        gap 2
+        length total-proportion=1.0
+        active-color "#83a598"
+        inactive-color "#ffffff80"
+    }
+}
+
+include "animations.kdl"
+prefer-no-csd
+hotkey-overlay { skip-at-startup; }
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+// Give unfocused windows a translucent, frosted-glass appearance.
+window-rule {
+    match is-focused=false
+
+    opacity 0.75
+    background-effect {
+        blur true
+        noise 0.03
+        saturation 1.2
+    }
+}
+
+// Keep swaybg stationary in Niri's backdrop so workspace transitions do not
+// expose the default black backdrop between vertically stacked workspaces.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+spawn-sh-at-startup "swaybg -i $HOME/projects/kunstOS/wallpapers/default.jpg -m fill"
+spawn-sh-at-startup "mako -c $HOME/projects/kunstOS/dotfiles/mako/config"
+spawn-sh-at-startup "waybar -c $HOME/projects/kunstOS/dotfiles/waybar/config.jsonc -s $HOME/projects/kunstOS/dotfiles/waybar/style.css"
+spawn-at-startup "udiskie"
+spawn-sh-at-startup "systemctl --user start opentabletdriver.service"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+
+recent-windows {
+    binds {
+        Alt+Tab { next-window; }
+    }
+}
+
+binds {
+    Mod+Return repeat=false { spawn "kitty"; }
+    Mod+Q repeat=false { close-window; }
+    Mod+E repeat=false { spawn "kitty" "-e" "yazi"; }
+    Mod+V repeat=false { toggle-window-floating; }
+    Mod+R repeat=false { spawn "fuzzel"; }
+    Mod+Y repeat=false { spawn "firefox"; }
+
+    Mod+T repeat=false { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Print repeat=false { screenshot; }
+    Mod+O repeat=false { toggle-overview; }
+    Mod+Shift+O repeat=false { toggle-column-tabbed-display; }
+
+    Mod+H { focus-column-left; }
+    Mod+L { focus-column-right; }
+    Mod+J { focus-column-left; }
+    Mod+K { focus-column-right; }
+    Mod+Shift+J { focus-window-down-or-top; }
+    Mod+Shift+K { focus-window-up-or-bottom; }
+    Mod+Ctrl+H { move-column-left; }
+    Mod+Ctrl+L { move-column-right; }
+    Mod+Ctrl+J { move-window-down; }
+    Mod+Ctrl+K { move-window-up; }
+    Mod+U { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
+    Mod+Ctrl+U { move-column-to-workspace-down; }
+    Mod+Ctrl+I { move-column-to-workspace-up; }
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%-"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+E { quit; }
+}

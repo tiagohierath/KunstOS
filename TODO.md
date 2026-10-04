@@ -9,4 +9,5 @@
 - [x] Waybar default (approved 2026-10-04): copy of config-niri + dark.css, personal modules swapped for built-ins, square corners, no gray (dotfiles/waybar)
 - [ ] Default cursor: ComixCursors-KunstOS (Opaque White, shrunk hand + others, solid zoom lens, grab added; cursors/kunst-cursors.py), live test until 17:28
 - [ ] Fonts: use ALL of Recursive's variants (Mono/Sans, Casual/Linear, weights, slant, cursive axes) across the system, not just Recursive Mono
-- [x] Default wallpaper (for now): forest painting Tiago sent, wallpapers/default.png; swap in a full-quality 4K original later
+- [x] Default wallpaper: Shishkin, The Forest Clearing (1896), 4316x2880 original from Wikimedia Commons, wallpapers/default.jpg
+- [ ] Live test: KunstOS wallpaper on Tiago's desktop (fill mode: never stretch, never black borders)

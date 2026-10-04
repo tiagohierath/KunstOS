@@ -8,8 +8,6 @@
 input {
     keyboard {
         xkb {
-            layout "br"
-            variant "abnt2"
             options "caps:swapescape"
         }
     }
@@ -81,9 +79,9 @@ layer-rule {
     place-within-backdrop true
 }
 
-spawn-sh-at-startup "swaybg -i $HOME/projects/kunstOS/wallpapers/default.jpg -m fill"
-spawn-sh-at-startup "mako -c $HOME/projects/kunstOS/dotfiles/mako/config"
-spawn-sh-at-startup "waybar -c $HOME/projects/kunstOS/dotfiles/waybar/config.jsonc -s $HOME/projects/kunstOS/dotfiles/waybar/style.css"
+spawn-sh-at-startup "swaybg -i /etc/kunstos/wallpaper.jpg -m fill"
+spawn-sh-at-startup "mako"
+spawn-sh-at-startup "waybar"
 spawn-at-startup "udiskie"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
@@ -98,7 +96,7 @@ binds {
     Mod+Q repeat=false { close-window; }
     Mod+E repeat=false { spawn "kitty" "-e" "yazi"; }
     Mod+V repeat=false { toggle-window-floating; }
-    Mod+R repeat=false { spawn-sh "rofi -show drun -show-icons -display-drun Applications -drun-display-format '{name}' -theme $HOME/projects/kunstOS/themes/rofi/grid.rasi"; }
+    Mod+R repeat=false { spawn-sh "rofi -show drun -show-icons -display-drun Applications -drun-display-format '{name}' -theme /etc/kunstos/rofi/grid.rasi"; }
     Mod+Y repeat=false { spawn "firefox"; }
 
     Mod+T repeat=false { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }

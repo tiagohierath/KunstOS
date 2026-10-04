@@ -180,6 +180,12 @@
         "pkg": "audacity",
         "label": "audio editing",
         "about": "Records and edits audio: cut, clean up and mix sound."
+      },
+      {
+        "name": "mpv",
+        "pkg": "mpv",
+        "label": "video player",
+        "about": "A small, fast video player that plays almost any file, with keyboard controls and scripts."
       }
     ]
   }

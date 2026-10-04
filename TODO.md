@@ -2,6 +2,8 @@
 
 Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
 
+Canon languages: Portuguese (Brazil) and English. Everything ships in both, more or less: manual, kunst-apps (labels and descriptions), TUIs, installer, README.
+
 ## Ship v1, in order
 
 - [ ] 1. System flake (milestone 1): stable NixOS 26.05, unfree allowed, tiled niri, KunstOS defaults installed system-wide (/etc/xdg, /etc/niri), packages, Recursive fonts, ComixCursors-KunstOS, wallpaper, audio, Wi-Fi, Bluetooth, no hardcoded home paths or keyboard layout, apps read from /etc/nixos/kunstos-apps.json. Done when a VM boots into the KunstOS desktop.
@@ -15,6 +17,8 @@ Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
 - [ ] 9. Real hardware test from a USB stick: Wi-Fi, suspend and lock, tablet pressure in Krita
 - [ ] 10. Release docs: manual and tips for people coming from Windows (shortcuts and the rest); audience is tinkerers, not people who only use a browser
 - [ ] 11. Release: README with screenshots, credits and licenses (Shishkin wallpaper, GPL cursor, CC BY-SA Oldschool PC fonts, OFL Recursive), ISO and checksum as a GitHub release, push
+
+- [ ] 12. Portuguese (Brazil) for everything: translate the manual (docs/manual), add pt-BR labels and descriptions to packs/packs.json, TUIs follow the system language, installer and README in both
 
 ## Open right now
 

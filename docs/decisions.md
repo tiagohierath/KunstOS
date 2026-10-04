@@ -5,6 +5,7 @@ Made by Tiago on 2026-10-04.
 | Topic | Decision |
 |---|---|
 | Name | Spelled **KunstOS**. |
+| Languages | Portuguese (Brazil) and English are canon. Everything ships in both, more or less. |
 | Windows | Tiled, normal niri. No title bars. |
 | How people get it | A downloadable ISO first. A flake for people already on NixOS later, from the same config. |
 | Installer | Graphical, customized for KunstOS. |

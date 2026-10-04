@@ -25,6 +25,12 @@
         "pkg": "inkscape",
         "label": "vector drawing",
         "about": "Vector drawing for logos, icons and illustrations that scale to any size."
+      },
+      {
+        "name": "Scribus",
+        "pkg": "scribus",
+        "label": "page layout",
+        "about": "Desktop publishing: lay out pages for books, zines and posters, with text frames and print-ready PDF export."
       }
     ]
   },

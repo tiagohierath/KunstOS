@@ -1,49 +1,9 @@
-// KunstOS animations: windows open instantly; closing looks like a TV switching off.
+// KunstOS animations: windows open and close instantly.
 animations {
     window-open {
         off
     }
-
-    // The picture squeezes vertically into a bright line, the line pulls in
-    // to a tiny dot, the dot goes dark. Easing lives in the shader, so the
-    // curve here stays linear.
     window-close {
-        duration-ms 320
-        curve "linear"
-        custom-shader r"
-            const float SQUEEZE_END = 0.55; // picture has become a line
-            const float SHRINK_END = 0.85;  // line has become a dot; then the dot fades
-            const float LINE_PX = 3.0;      // line thickness and dot size, logical px
-            const vec3 GLOW = vec3(0.984, 0.945, 0.780); // gruvbox #fbf1c7
-
-            float beat(float p, float a, float b) {
-                return clamp((p - a) / (b - a), 0.0, 1.0);
-            }
-
-            vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-                float p = niri_clamped_progress;
-
-                // moves on the first frame, then snaps shut
-                float squeeze = beat(p, 0.0, SQUEEZE_END);
-                squeeze = squeeze * (0.35 + 0.65 * squeeze * squeeze);
-                // keeps the snap's speed going in, settles on the dot
-                float shrink = 1.0 - pow(1.0 - beat(p, SQUEEZE_END, SHRINK_END), 3.0);
-                float fade = beat(p, SHRINK_END, 1.0);
-
-                vec2 c = coords_geo.xy - 0.5;
-                float halfH = max(0.5 * (1.0 - squeeze), 0.5 * LINE_PX / size_geo.y);
-                float halfW = max(0.5 * (1.0 - shrink), 0.5 * LINE_PX / size_geo.x);
-                if (abs(c.x) > halfW || abs(c.y) > halfH) {
-                    return vec4(0.0);
-                }
-
-                vec3 geo = vec3(0.5 + c.x / (2.0 * halfW), 0.5 + c.y / (2.0 * halfH), 1.0);
-                vec4 color = texture2D(niri_tex, (niri_geo_to_tex * geo).st);
-
-                // light gathers as the picture thins
-                color = mix(color, vec4(GLOW, 1.0), squeeze * squeeze);
-                return color * (1.0 - fade) * (1.0 - fade);
-            }
-        "
+        off
     }
 }

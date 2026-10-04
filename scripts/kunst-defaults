@@ -7,4 +7,4 @@ state=/etc/nixos/kunstos-apps.json
 
 apps=$(jq -r '.[] | select(.default) | .apps[] | select(.optional | not) | .pkg' "$packs")
 jq -R . <<<"$apps" | jq -s 'map(select(. != ""))' | sudo tee "$state" >/dev/null &&
-    sudo nixos-rebuild switch --flake /etc/nixos#kunstos
+    sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos

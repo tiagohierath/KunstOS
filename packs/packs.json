@@ -192,6 +192,18 @@
         "pkg": "audacious",
         "label": "music player",
         "about": "A light music player for local files, with playlists and a classic look."
+      },
+      {
+        "name": "ImageMagick",
+        "pkg": "imagemagick",
+        "label": "image conversion",
+        "about": "Converts, resizes and edits images from the command line, in batches."
+      },
+      {
+        "name": "FFmpeg",
+        "pkg": "ffmpeg",
+        "label": "video conversion",
+        "about": "Converts and processes video and audio from the command line, in batches."
       }
     ]
   }

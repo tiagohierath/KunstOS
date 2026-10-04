@@ -13,7 +13,7 @@
   },
   "modules": [
     "break",
-    { "type": "custom", "format": "\u001b[1;31mk u n s t \u001b[33mO S\u001b[0m" },
+    { "type": "custom", "format": "\u001b[1;31mKunst\u001b[33mOS\u001b[0m" },
     { "type": "custom", "format": "\u001b[33m─────────────────────────────────\u001b[0m" },
     { "type": "os",       "key": "os      " },
     { "type": "kernel",   "key": "kernel  " },

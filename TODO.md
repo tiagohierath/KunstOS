@@ -1,30 +1,51 @@
 # KunstOS TODO
 
-- [ ] Milestone 1: flake that boots a QEMU VM into niri (floating windows), Krita installed
-- [x] Terminal color palette from the cross-stitch embroidery DROPPED; default = Gruvbox Dark from his own kitty (dotfiles/kitty)
-- [x] App menu: rofi grid approved (themes/rofi/grid.rasi), bound to Mod+R in the KunstOS niri config
-- [x] fastfetch: KunstOS ASCII logo + config (dotfiles/fastfetch). Logo APPROVED: 13-line serif K, `jp2a --invert --height=13 k-source.jpg`
-- [x] fastfetch 2x version: scrapped (too silly), standard config.jsonc is the only one
-- [x] fastfetch: K inside a circle, tried and dropped; plain K stays
-- [x] Waybar default (approved 2026-10-04): copy of config-niri + dark.css, personal modules swapped for built-ins, square corners, no gray (dotfiles/waybar)
-- [x] Default cursor APPROVED: ComixCursors-KunstOS (Opaque White, shrunk hand + others, solid zoom lens, grab added; cursors/kunst-cursors.py)
-- [ ] Fonts: Recursive Mono only in the terminal, Recursive Sans everywhere else (Waybar, mako, rofi); use its variants
-- [x] Default wallpaper: Shishkin, The Forest Clearing (1896), 4316x2880 original from Wikimedia Commons, wallpapers/default.jpg
-- [ ] Live test: KunstOS wallpaper on Tiago's desktop (fill mode: never stretch, never black borders)
-- [x] Window close animation: TV-off shader tried and dropped; windows close instantly (window-close off)
-- [x] Windows open instantly (window-open off, dotfiles/niri/animations.kdl)
-- [x] No animations for now: animations { off }
-- [ ] Notification style (mako), emulating the fuzzel menu look
-- [x] niri experiment: dotfiles/niri/config.kdl (copy of his) + scripts/niri-experiment.sh (nested, Mod = Alt)
-- [x] Sketchbook model (workspace = sketchbook, page-turn animation): scrapped, niri stays normal
-- [ ] App installer TUI: scripts/kunst-apps (gum + jq), packs/packs.json; pick apps or "All <pack>"; writes /etc/nixos/kunstos-apps.json + nixos-rebuild (milestone 1 must read it; Pictogrep from its flake; Aseprite+Obsidian are unfree)
-- [ ] TUI standard for KunstOS (docs/tui.md) + rebuild kunst-apps to it, "way way more pretty"
-- [ ] kunst-apps: show a longer description (one sentence) of the highlighted app
-- [x] Our Paint: removed for now (not in nixpkgs; would need its v0.5 Linux AppImage packaged, GPL-3.0)
-- [x] Decisions recorded in docs/decisions.md
-- [x] Unfocused windows fully opaque (removed the 0.75 opacity + blur rule)
-- [x] Tablets: libinput only for v1 (removed the OpenTabletDriver startup line)
-- [ ] Light mode: Gruvbox Light for kitty, Waybar, mako, rofi, TUIs, plus a way to switch
-- [ ] Installer: graphical, customized for KunstOS
-- [ ] Flake (milestone 1): nixpkgs on stable NixOS 26.05, allowUnfree = true, apps from /etc/nixos/kunstos-apps.json
-- [ ] Release docs: manuals + tips for people coming from Windows (shortcuts etc.); audience = tinkerers, not browser-only users
+Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
+
+## Ship v1, in order
+
+- [ ] 1. System flake (milestone 1): stable NixOS 26.05, unfree allowed, tiled niri, KunstOS defaults installed system-wide (/etc/xdg, /etc/niri), packages, Recursive fonts, ComixCursors-KunstOS, wallpaper, audio, Wi-Fi, Bluetooth, no hardcoded home paths or keyboard layout, apps read from /etc/nixos/kunstos-apps.json. Done when a VM boots into the KunstOS desktop.
+- [ ] 2. Login screen (not decided; suggestion: tuigreet themed Gruvbox)
+- [ ] 3. Lock screen and idle (not decided; suggestion: swaylock + swayidle themed Gruvbox)
+- [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake
+- [ ] 5. Fonts: Recursive Mono only in the terminal, Recursive Sans everywhere else (Waybar, mako, rofi)
+- [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs, plus a way to switch (can slip to v1.1)
+- [ ] 7. Live ISO that boots into KunstOS
+- [ ] 8. Graphical installer customized for KunstOS (Calamares with KunstOS branding, installs the KunstOS flake); needs an SVG of the K logo
+- [ ] 9. Real hardware test from a USB stick: Wi-Fi, suspend and lock, tablet pressure in Krita
+- [ ] 10. Release docs: manual and tips for people coming from Windows (shortcuts and the rest); audience is tinkerers, not people who only use a browser
+- [ ] 11. Release: README with screenshots, credits and licenses (Shishkin wallpaper, GPL cursor, OFL fonts), ISO and checksum as a GitHub release, push
+
+## Open right now
+
+- [ ] Restore Tiago's own wallpaper when he's done testing (his swaybg was swapped for the KunstOS one; it also comes back on his next login)
+
+## Later
+
+- Boot splash
+- GTK theme and icons beyond dark by default
+- Our Paint (not in nixpkgs; package its v0.5 Linux AppImage, GPL-3.0)
+- Website
+
+## Done
+
+- [x] Terminal colors: Gruvbox Dark from Tiago's kitty (dotfiles/kitty)
+- [x] fastfetch: 13-line K logo (`jp2a --invert --height=13 k-source.jpg`), title "KunstOS", 10 plain modules (dotfiles/fastfetch)
+- [x] Waybar: his config-niri look with built-in modules, square corners (dotfiles/waybar)
+- [x] Notifications: mako styled like the fuzzel menu (dotfiles/mako)
+- [x] Cursor: ComixCursors-KunstOS, opaque, smaller hand, grab added (cursors/kunst-cursors.py)
+- [x] Wallpaper: Shishkin, The Forest Clearing (1896), full resolution, public domain (wallpapers/)
+- [x] App menu: rofi grid (themes/rofi/grid.rasi) on Mod+R
+- [x] niri config: copy of Tiago's (dotfiles/niri/config.kdl), tested nested with scripts/niri-experiment.sh; no animations, opaque unfocused windows, libinput tablets
+- [x] kunst-apps prototype with gum (scripts/kunst-apps) and packs/packs.json with labels and one-sentence descriptions
+- [x] TUI standard (docs/tui.md)
+- [x] Decisions (docs/decisions.md)
+
+## Dropped
+
+- isabela-eyes palette
+- fastfetch 2x version, K in a ring, spaced "k u n s t O S" title
+- TV-off close animation and window animations in general
+- Sketchbook layout with page turns
+- Floating windows by default
+- Our Paint, for now

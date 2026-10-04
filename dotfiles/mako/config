@@ -1,5 +1,5 @@
 # KunstOS notifications: styled like the fuzzel menu (Gruvbox, blue border, green highlight)
-font=Cascadia Code 14
+font=PxPlus ToshibaSat 9x16 12
 background-color=#282828
 text-color=#ebdbb2
 border-color=#83a598
@@ -11,7 +11,7 @@ width=420
 max-icon-size=48
 default-timeout=5000
 progress-color=over #504945
-format=<span color="#b8bb26"><b>%s</b></span>\n%b
+format=<span color="#b8bb26">%s</span>\n%b
 
 [urgency=critical]
 border-color=#fb4934

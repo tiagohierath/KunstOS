@@ -1,5 +1,5 @@
 # KunstOS boot, login and lock screens
-{ ... }:
+{ lib, ... }:
 {
   # Boot: plain text in Gruvbox colors, boot menu entries named KunstOS.
   system.nixos.distroName = "KunstOS";
@@ -21,7 +21,7 @@
       };
       GTK = {
         application_prefer_dark_theme = true;
-        font_name = "PxPlus ToshibaSat 9x16 12";
+        font_name = lib.mkForce "PxPlus ToshibaSat 9x16 12";
       };
     };
     extraCss = ../dotfiles/regreet/regreet.css;

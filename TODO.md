@@ -7,3 +7,5 @@
 - [x] fastfetch 2x version: scrapped (too silly), standard config.jsonc is the only one
 - [x] fastfetch: K inside a circle, tried and dropped; plain K stays
 - [x] Waybar default (approved 2026-10-04): copy of config-niri + dark.css, personal modules swapped for built-ins, square corners, no gray (dotfiles/waybar)
+- [ ] Default cursor: ComixCursors-KunstOS (Opaque White, shrunk hand + others, solid zoom lens, grab added; cursors/kunst-cursors.py), live test until 17:28
+- [ ] Fonts: use ALL of Recursive's variants (Mono/Sans, Casual/Linear, weights, slant, cursive axes) across the system, not just Recursive Mono

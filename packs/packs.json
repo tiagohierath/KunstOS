@@ -170,12 +170,6 @@
     "title": "video and sound tools",
     "apps": [
       {
-        "name": "Kdenlive",
-        "pkg": "kdePackages.kdenlive",
-        "label": "video editing",
-        "about": "Video editing with a timeline, effects and titles."
-      },
-      {
         "name": "OBS Studio",
         "pkg": "obs-studio",
         "label": "recording",

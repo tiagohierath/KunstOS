@@ -186,6 +186,12 @@
         "pkg": "mpv",
         "label": "video player",
         "about": "A small, fast video player that plays almost any file, with keyboard controls and scripts."
+      },
+      {
+        "name": "Audacious",
+        "pkg": "audacious",
+        "label": "music player",
+        "about": "A light music player for local files, with playlists and a classic look."
       }
     ]
   }

@@ -31,18 +31,18 @@
         "pkg": "gimp",
         "label": "photo editing",
         "about": "Photo editing and retouching, with layers, masks and filters."
-      },
-      {
-        "name": "Aseprite",
-        "pkg": "aseprite",
-        "label": "pixel art",
-        "about": "Pixel art and pixel animation, with onion skin and sprite sheet export."
       }
     ]
   },
   {
     "title": "fun tinkering tools",
     "apps": [
+      {
+        "name": "Aseprite",
+        "pkg": "aseprite",
+        "label": "pixel art",
+        "about": "Pixel art and pixel animation, with onion skin and sprite sheet export."
+      },
       {
         "name": "Godot",
         "pkg": "godot_4",
@@ -78,8 +78,75 @@
         "pkg": "processing",
         "label": "creative coding",
         "about": "Code sketches that draw and animate, made for artists learning to program."
+      },
+      {
+        "name": "Pixelorama",
+        "pkg": "pixelorama",
+        "label": "pixel art",
+        "about": "Free pixel art editor with layers, animation and tilesets, made with Godot."
+      },
+      {
+        "name": "Pencil2D",
+        "pkg": "pencil2d",
+        "label": "2D animation",
+        "about": "Hand-drawn 2D animation with frames on a timeline, like a flipbook."
+      },
+      {
+        "name": "GrafX2",
+        "pkg": "grafx2",
+        "label": "retro paint",
+        "about": "A 256-color paint program in the style of 1990s DOS painting."
+      },
+      {
+        "name": "Goxel",
+        "pkg": "goxel",
+        "label": "voxels",
+        "about": "A voxel editor: build 3D pictures one cube at a time, then export them."
+      },
+      {
+        "name": "Blockbench",
+        "pkg": "blockbench",
+        "label": "low-poly 3D",
+        "about": "Low-poly 3D models and animations for games, pixel art and props."
+      },
+      {
+        "name": "XaoS",
+        "pkg": "xaos",
+        "label": "fractals",
+        "about": "Zoom into fractals in real time with the mouse, and save the views you like."
+      },
+      {
+        "name": "Mandelbulber",
+        "pkg": "mandelbulber",
+        "label": "3D fractals",
+        "about": "Renders 3D fractals with lighting and camera controls."
+      },
+      {
+        "name": "MilkyTracker",
+        "pkg": "milkytracker",
+        "label": "music tracker",
+        "about": "A music tracker like the old Amiga and PC ones: notes typed into a grid."
+      },
+      {
+        "name": "Furnace",
+        "pkg": "furnace",
+        "label": "chiptune",
+        "about": "A chiptune tracker for the sound chips of old consoles and computers, like the Game Boy and the NES."
+      },
+      {
+        "name": "VCV Rack",
+        "pkg": "vcv-rack",
+        "label": "modular synth",
+        "about": "A virtual modular synthesizer with free modules, like a Eurorack case on your screen."
+      },
+      {
+        "name": "Bonzomatic",
+        "pkg": "bonzomatic",
+        "label": "live shaders",
+        "about": "Live shader coding: write GLSL and watch the visuals change as you type."
       }
-    ]
+    ],
+    "default": true
   },
   {
     "title": "writing tools",

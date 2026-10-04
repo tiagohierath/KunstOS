@@ -8,7 +8,7 @@ Made by Tiago on 2026-10-04.
 | Languages | Portuguese (Brazil) and English are canon. Everything ships in both, more or less. |
 | Windows | Tiled, normal niri. No title bars. |
 | How people get it | A downloadable ISO first. A flake for people already on NixOS later, from the same config. |
-| First boot | Only the desktop is installed; kunst-apps opens on the first login so people pick their apps. |
+| First boot | Only the desktop is installed. The fun tinkering pack installs by default (scripts/kunst-defaults); serious tools (Krita, Blender...) are too heavy for the default and come from kunst-apps. The ISO stays small: default apps download during the install. |
 | Installer | Calamares with the KunstOS look: colors, logo and wording. |
 | Files and editing | yazi in the terminal, a small graphical file manager (Thunar) for dragging pictures into apps, Helix as the text editor. |
 | Installing apps | Always declarative: the system config changes and the system is rebuilt. Never `nix-env` or `nix profile`. |

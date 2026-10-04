@@ -2,9 +2,11 @@
 # Fresh-install apps: every pack marked "default" in packs/packs.json, minus apps marked
 # "optional" (the fun tinkering tools, minus the optional ones). Writes them to /etc/nixos/kunstos-apps.json and rebuilds, the same way kunst-apps does.
 # The apps download during the install, so they don't add to the size of the ISO.
+# Stops before touching /etc if anything fails, so a broken run can't write an empty list.
+set -euo pipefail
 packs=$(dirname "$(readlink -f "$0")")/../packs/packs.json
 state=/etc/nixos/kunstos-apps.json
 
-apps=$(jq -r '.[] | select(.default) | .apps[] | select(.optional | not) | .pkg' "$packs")
-jq -R . <<<"$apps" | jq -s 'map(select(. != ""))' | sudo tee "$state" >/dev/null &&
-    sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+json=$(jq '[.[] | select(.default) | .apps[] | select(.optional | not) | .pkg]' "$packs")
+sudo tee "$state" <<<"$json" >/dev/null
+sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos

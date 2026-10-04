@@ -28,5 +28,5 @@ echo "Apps after this:"
 { [ -n "$apps" ] && cut -f2 <<<"$apps" || echo "(none)"; } | sed 's/^/  /'
 [ -f "$state" ] || { echo; echo "Not KunstOS ($state is missing), so nothing was installed."; exit 0; }
 gum confirm "Install?" || exit 0
-cut -f1 <<<"$apps" | jq -R . | jq -s 'map(select(. != ""))' | sudo tee "$state" >/dev/null &&
-    sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+json=$(cut -f1 <<<"$apps" | jq -R . | jq -s 'map(select(. != ""))') || exit 1
+sudo tee "$state" <<<"$json" >/dev/null && sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos

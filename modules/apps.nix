@@ -4,7 +4,15 @@
 let
   file = "/etc/nixos/kunstos-apps.json";
   names = lib.optionals (builtins.pathExists file) (builtins.fromJSON (builtins.readFile file));
+  # kunst-apps and kunst-defaults, with packs.json next to them (they look for ../packs/packs.json).
+  kunstTools = pkgs.runCommand "kunst-tools" { } ''
+    mkdir -p $out/bin $out/packs
+    cp ${../scripts/kunst-apps} $out/bin/kunst-apps
+    cp ${../scripts/kunst-defaults} $out/bin/kunst-defaults
+    cp ${../packs/packs.json} $out/packs/packs.json
+    chmod +x $out/bin/*
+  '';
 in
 {
-  environment.systemPackages = map (name: pkgs.${name}) names;
+  environment.systemPackages = [ kunstTools pkgs.gum pkgs.jq ] ++ map (name: pkgs.${name}) names;
 }

@@ -4,6 +4,10 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  # UEFI boot with systemd-boot, the easiest default for v1.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.networkmanager.enable = true;
 
   services.pipewire = {

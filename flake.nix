@@ -14,7 +14,9 @@
         ./modules/apps.nix
         ./modules/fonts.nix
         ./modules/screens.nix
-      ];
+      ]
+      # Disks and drivers, written by the installer next to this file.
+      ++ nixpkgs.lib.optional (builtins.pathExists ./hardware-configuration.nix) ./hardware-configuration.nix;
     };
   };
 }

@@ -15,3 +15,5 @@
 - [x] Windows open instantly (window-open off, dotfiles/niri/animations.kdl)
 - [x] No animations for now: animations { off }
 - [ ] Notification style (mako), emulating the fuzzel menu look
+- [ ] niri experiment: KunstOS niri config = copy of his config, run nested (never edit ~/dotfiles/niri/config.kdl)
+- [ ] Sketchbook model: each workspace (horizontal row) = 1 sketchbook, windows = pages; horizontal = turn pages (page-turn animation), vertical = change sketchbook

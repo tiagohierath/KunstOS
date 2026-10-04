@@ -1,15 +1,17 @@
 # KunstOS fonts: PxPlus ToshibaSat 9x16 at 12 pt for most things, Recursive for app interfaces.
-# The pixel font has 780 glyphs; anything it lacks (emoji, icons, Braille, some symbols)
-# comes from the next font in each list.
+# Anything those fonts lack (emoji, Braille, box corners, symbols like ✔ ✗ ★, Cyrillic)
+# comes from Noto, the next fonts in each list.
 { pkgs, ... }:
 {
-  fonts.enableDefaultPackages = true; # DejaVu and Noto Color Emoji, used as fallbacks
   fonts.packages = [
     pkgs.ultimate-oldschool-pc-font-pack
     pkgs.recursive
+    pkgs.noto-fonts
+    pkgs.noto-fonts-color-emoji
   ];
   fonts.fontconfig.defaultFonts = {
-    monospace = [ "PxPlus ToshibaSat 9x16" "DejaVu Sans Mono" "Noto Color Emoji" ];
-    sansSerif = [ "Recursive" "DejaVu Sans" "Noto Color Emoji" ];
+    monospace = [ "PxPlus ToshibaSat 9x16" "Noto Sans Mono" "Noto Sans Symbols 2" "Noto Color Emoji" ];
+    sansSerif = [ "Recursive" "Noto Sans" "Noto Sans Symbols 2" "Noto Color Emoji" ];
+    emoji = [ "Noto Color Emoji" ];
   };
 }

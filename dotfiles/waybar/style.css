@@ -1,0 +1,67 @@
+/* KunstOS waybar: Gruvbox Dark, from Tiago's themes/dark.css */
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0;
+}
+
+window#waybar {
+    min-height: 44px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #282828;
+    border: 3px solid #282828;
+}
+
+tooltip {
+    background: #3c3836;
+    color: #ebdbb2;
+    font-size: 13px;
+    border: 2px solid #504945;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #ebdbb2;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button:hover { background: none; }
+
+#workspaces button.active { color: #d65d0e; }
+
+#disk,
+#pulseaudio,
+#clock.date,
+#battery {
+    color: #ebdbb2;
+    font-weight: normal;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#network {
+    color: #ebdbb2;
+    font-weight: normal;
+    font-size: 19px;
+    padding-left: 4px;
+}
+
+#battery.charging, #battery.plugged { color: #fbf1c7; }
+#battery.critical:not(.charging) { color: #fb4934; }
+
+#clock { color: #ebdbb2; }
+
+#custom-spacer {
+    color: #ebdbb2;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#custom-smallspacer { opacity: 0; }
+
+#custom-menu { color: #fbf1c7; }
+
+#tray { color: #ebdbb2; }

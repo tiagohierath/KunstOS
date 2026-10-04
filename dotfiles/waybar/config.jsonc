@@ -1,0 +1,73 @@
+// KunstOS waybar: Tiago's config-niri with the personal modules swapped for built-ins
+{
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+
+    "modules-left": ["custom/smallspacer", "network", "custom/spacer", "disk"],
+    "modules-center": ["niri/workspaces"],
+    "modules-right": ["custom/padd", "group/expand", "pulseaudio", "custom/spacer", "clock#date", "custom/spacer", "battery", "custom/spacer", "clock", "custom/padd"],
+
+    "custom/smallspacer": { "format": " " },
+    "custom/spacer": { "format": "|" },
+    "custom/padd": { "format": "  ", "interval": "once", "tooltip": false },
+
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "not-power",
+            "transition-to-left": true
+        },
+        "modules": ["custom/menu", "custom/spacer", "tray"]
+    },
+
+    "custom/menu": { "format": "󰅃", "rotate": 90 },
+
+    "tray": { "icon-size": 16, "spacing": 3 },
+
+    "network": {
+        "format-wifi": "📶",
+        "format-ethernet": "🌐",
+        "format-linked": "🌐 {ifname} (No IP)",
+        "format-disconnected": "❌",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal: <b>{signaldBm}dBm ({signalStrength}%)</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>",
+        "interval": 2
+    },
+
+    "disk": {
+        "format": "💾 {percentage_used}%",
+        "path": "/",
+        "interval": 3600,
+        "tooltip-format": "Disk usage: /"
+    },
+
+    "niri/workspaces": { "format": "{value}" },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "🔇 {volume}%",
+        "format-icons": { "headphone": "🎧", "default": ["🔈", "🔉", "🔊"] },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "clock#date": {
+        "format": "📅 {:%a %d %b}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "battery": {
+        "states": { "good": 95, "warning": 30, "critical": 20 },
+        "format": "🔋 {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "format-plugged": "🔌 {capacity}%"
+    },
+
+    "clock": {
+        "format": "🕐 {:%I:%M %p}",
+        "tooltip": false
+    }
+}

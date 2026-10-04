@@ -6,3 +6,4 @@
 - [x] fastfetch: KunstOS ASCII logo + config (dotfiles/fastfetch). Logo APPROVED: 13-line serif K, `jp2a --invert --height=13 k-source.jpg`
 - [x] fastfetch 2x version: scrapped (too silly), standard config.jsonc is the only one
 - [x] fastfetch: K inside a circle, tried and dropped; plain K stays
+- [x] Waybar default (approved 2026-10-04): copy of config-niri + dark.css, personal modules swapped for built-ins, square corners, no gray (dotfiles/waybar)

@@ -1,0 +1,54 @@
+/* kunstOS app grid: search bar on top, big icons with names below. Colors: Gruvbox Dark */
+* {
+    bg:      #282828F2;
+    cloth:   #3C3836;
+    ink:     #EBDBB2;
+    yellow:  #FABD2F;
+    blue:    #83A598;
+    background-color: transparent;
+    text-color: @ink;
+    font: "Recursive Sans Linear 13";
+}
+
+window {
+    width: 960px;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 16px;
+    background-color: @bg;
+    padding: 24px;
+}
+
+mainbox { spacing: 20px; children: [ inputbar, listview ]; }
+
+inputbar {
+    background-color: @cloth;
+    border-radius: 10px;
+    padding: 12px 16px;
+    spacing: 12px;
+    children: [ prompt, entry ];
+}
+prompt { text-color: @yellow; font: "Recursive Sans Linear Bold 18"; }
+entry  { font: "Recursive Sans Linear 18"; placeholder: "Search"; placeholder-color: @ink; }
+
+listview {
+    columns: 6;
+    lines: 4;
+    spacing: 12px;
+    fixed-height: true;
+    fixed-columns: true;
+    scrollbar: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 14px 6px;
+    spacing: 10px;
+    border-radius: 12px;
+}
+element selected { background-color: @cloth; border: 2px; border-color: @yellow; }
+element-icon { size: 72px; horizontal-align: 0.5; }
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0;
+}

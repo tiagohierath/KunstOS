@@ -1,29 +1,25 @@
-$1.:::::::::::::,        .dKNNO:  
-$1:XWWMMMMMMMWWWk       ,KWMMMMWx.
-$1 .lNMMMMMMMMK,       ;XMWMMMMMWO
-$1   kMMMMMMMWc       .KMk:KMMMMMW
-$1   oMMMMMMMW;       oW0. dMMMMMM
-$1   cMMMMMMMN'      .KN;  oMMMMMM
-$1   cWMMMMMMN'      lWx   lMMMMMW
-$1   cWMMMMMMN'     .0N,   'XWWWM0
-$1   cWMMMMMMN'     ;WO     ,kXXx.
-$1   cMMMMMMMN'     xMl           
-$1   cWMMMMMMN'    ,NX.           
-$1   cWMMMMMMN'   ,KWo            
-$1   cWMMMMMMWc':xNWx             
-$1   cWMMMMMMMWWMMMW0o'           
-$1   cWMMMMMMWOkWMMMMWW0:         
-$1   cWMMMMMMN' dWMMMMMMWl        
-$1   cWMMMMMMN' .0MMMMMMMN;       
-$1   cWMMMMMMN'  cWMMMMMMMX.      
-$1   cWMMMMMMN'  .kMMMMMMMMd      
-$1   cWMMMMMMN'   'KMMMMMMMN;     
-$1   cWMMMMMMN'    :NMMMMMMM0.    
-$1   cWMMMMMMN'     xMMMMMMMWk.   
-$1   cWMMMMMMN'     'NMMMMMMMW:   
-$1   cMMMMMMMW,      lWMMMMMMM0.  
-$1   oMMMMMMMWc      .OMMMMMMMWx. 
-$1  .0MMMMMMMMO.      ;WMMMMMMMWd 
-$1.lKWMMMMMMMMWO;      xMMMMMMMMW0
-$1;kOOOOOOOOOOkko      .xOOOOOOOOk
-$1                                
+$1'::::::::::::.       .xXNKc  
+$1cKWWMMMMMMWW0,      lNWMMMW0,
+$1  cWMMMMMMWd       :WWNMMMMWX
+$1  .KMMMMMMW,      .KX,'NMMMMM
+$1   OMMMMMMN.      dW: .KMMMMM
+$1   kMMMMMMN.     ,N0.  0MMMMM
+$1   kMMMMMMN.     oMo   dWMMMX
+$1   kMMMMMMN.    .KN'   .dKXO;
+$1   kMMMMMMN.    :Wx          
+$1   kMMMMMMN.   .OX'          
+$1   kMMMMMMN.  'OWo           
+$1   kMMMMMMWxx0WW0.           
+$1   kMMMMMMMWWMMMMNk:         
+$1   kMMMMMMN;cWMMMWWWk.       
+$1   kMMMMMMN. dWMMMMMMO.      
+$1   kMMMMMMN. .0MMMMMMMd      
+$1   kMMMMMMN.  ;NMMMMMMW,     
+$1   kMMMMMMN.   oWMMMMMMO.    
+$1   kMMMMMMN.   .OMMMMMMWo    
+$1   kMMMMMMN.    ,WMMMMMMW;   
+$1   kMMMMMMN.     xMMMMMMM0.  
+$1   OMMMMMMW'     .KMMMMMMWl  
+$1  .XMMMMMMWc      ;NMMMMMMNc 
+$1.;kWMMMMMMMK;.     dMMMMMMMWx
+$1cOOO000000OOO;     .k000000OO

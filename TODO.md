@@ -5,8 +5,8 @@ Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
 ## Ship v1, in order
 
 - [ ] 1. System flake (milestone 1): stable NixOS 26.05, unfree allowed, tiled niri, KunstOS defaults installed system-wide (/etc/xdg, /etc/niri), packages, Recursive fonts, ComixCursors-KunstOS, wallpaper, audio, Wi-Fi, Bluetooth, no hardcoded home paths or keyboard layout, apps read from /etc/nixos/kunstos-apps.json. Done when a VM boots into the KunstOS desktop.
-- [ ] 2. Login screen (not decided; suggestion: tuigreet themed Gruvbox)
-- [ ] 3. Lock screen and idle (not decided; suggestion: swaylock + swayidle themed Gruvbox)
+- [ ] 2. Boot and login screens (in progress): boot menu, boot splash, login greeter, Gruvbox console colors
+- [ ] 3. Lock screen and idle (in progress)
 - [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake
 - [ ] 5. Fonts: Recursive Mono only in the terminal, Recursive Sans everywhere else (Waybar, mako, rofi)
 - [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs, plus a way to switch (can slip to v1.1)
@@ -22,7 +22,6 @@ Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
 
 ## Later
 
-- Boot splash
 - GTK theme and icons beyond dark by default
 - Our Paint (not in nixpkgs; package its v0.5 Linux AppImage, GPL-3.0)
 - Website

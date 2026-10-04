@@ -25,12 +25,6 @@
         "pkg": "inkscape",
         "label": "vector drawing",
         "about": "Vector drawing for logos, icons and illustrations that scale to any size."
-      },
-      {
-        "name": "GIMP",
-        "pkg": "gimp",
-        "label": "photo editing",
-        "about": "Photo editing and retouching, with layers, masks and filters."
       }
     ]
   },

@@ -16,4 +16,8 @@ Made by Tiago on 2026-10-04.
 | Light mode | Yes, with Gruvbox Light. |
 | App launcher | The rofi grid (search on top, big icons with names). |
 | Animations | None for now. |
+| Interfaces | TUI wherever it's possible. |
+| Boot | Plain text boot in Gruvbox console colors; boot menu entries named KunstOS. |
+| Login screen | Graphical: ReGreet, the wallpaper painting behind a square Gruvbox login box (an exception to TUI-first). |
+| Lock screen | hyprlock: the painting, a big clock, the date and a square password box. |
 | Unfocused windows | Fully opaque, never see-through. |

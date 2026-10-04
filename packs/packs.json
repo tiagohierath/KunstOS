@@ -144,6 +144,13 @@
         "pkg": "bonzomatic",
         "label": "live shaders",
         "about": "Live shader coding: write GLSL and watch the visuals change as you type."
+      },
+      {
+        "name": "AzPainter",
+        "pkg": "azpainter",
+        "label": "full-color paint",
+        "optional": true,
+        "about": "Full-color painting for illustration and drawing, lighter than Krita, and not installed by default."
       }
     ],
     "default": true

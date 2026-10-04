@@ -17,3 +17,4 @@
 - [ ] Notification style (mako), emulating the fuzzel menu look
 - [x] niri experiment: dotfiles/niri/config.kdl (copy of his) + scripts/niri-experiment.sh (nested, Mod = Alt)
 - [x] Sketchbook model (workspace = sketchbook, page-turn animation): scrapped, niri stays normal
+- [ ] App installer TUI: scripts/kunst-apps (gum + jq), packs/packs.json; pick apps or "All <pack>"; writes /etc/nixos/kunstos-apps.json + nixos-rebuild (milestone 1 must read it; Pictogrep from its flake; Aseprite+Obsidian are unfree)

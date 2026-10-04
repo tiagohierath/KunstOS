@@ -14,3 +14,4 @@
 - [x] Window close animation: TV-off shader tried and dropped; windows close instantly (window-close off)
 - [x] Windows open instantly (window-open off, dotfiles/niri/animations.kdl)
 - [x] No animations for now: animations { off }
+- [ ] Notification style (mako), emulating the fuzzel menu look

@@ -8,7 +8,7 @@ the ones you'll run into in the first hour.
 | On Windows | On KunstOS |
 |---|---|
 | Start menu | The apps menu: Super+R |
-| File Explorer | yazi, a file manager in the terminal: Super+E |
+| File Explorer | Thunar, in the apps menu, or yazi, a file manager in the terminal: Super+E |
 | Task View | The overview: Super+O |
 | Snipping Tool | Super+Print |
 | Installers, Microsoft Store | `kunst-apps` and your system config, see below |
@@ -26,7 +26,9 @@ press Super+V on it. The full list is in [Shortcuts](shortcuts.md).
 
 ## Installing apps
 
-There are no installers to download. Open a terminal (Super+Enter) and run:
+There are no installers to download. A fresh KunstOS has only the desktop, and
+`kunst-apps` opens by itself on your first login. To open it again later, open
+a terminal (Super+Enter) and run:
 
 ```
 kunst-apps

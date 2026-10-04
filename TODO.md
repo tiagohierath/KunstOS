@@ -13,3 +13,4 @@
 - [ ] Live test: KunstOS wallpaper on Tiago's desktop (fill mode: never stretch, never black borders)
 - [x] Window close animation: TV-off shader tried and dropped; windows close instantly (window-close off)
 - [x] Windows open instantly (window-open off, dotfiles/niri/animations.kdl)
+- [x] No animations for now: animations { off }

@@ -13,8 +13,6 @@ use a browser.
 desktop, its look, the app list and the manual. The installable system comes
 next ([TODO.md](TODO.md)).
 
-[Português abaixo](#português).
-
 ## What's in it
 
 | Part | Where |
@@ -42,16 +40,6 @@ nix shell nixpkgs#gum nixpkgs#jq -c ~/projects/kunstOS/scripts/kunst-apps
 
 On NixOS with niri, `scripts/niri-experiment.sh` opens the KunstOS desktop in
 a window, without touching your own config. Inside it, Mod is Alt.
-
-## Português
-
-KunstOS é um sistema operacional para artistas visuais, baseado em NixOS. É
-para quem desenha, pinta, modela em 3D, faz pixel art, som e código, e gosta de
-abrir o terminal e mexer nas coisas. Não é para quem só usa o navegador.
-
-**A 0.1 é uma prévia.** Ainda não tem instalador nem ISO. Esta versão traz a
-área de trabalho, o visual, a lista de apps e o manual. O sistema instalável
-vem a seguir. As tabelas acima mostram onde fica cada parte.
 
 ## Credits and licenses
 

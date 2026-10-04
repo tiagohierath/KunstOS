@@ -23,7 +23,7 @@
   environment.variables.VISUAL = "hx";
 
   # Time zone and language are chosen by the installer.
-  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "pt_BR.UTF-8/UTF-8" ];
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   system.stateVersion = "26.05";
 }

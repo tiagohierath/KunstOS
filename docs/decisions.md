@@ -5,7 +5,7 @@ Made by Tiago on 2026-10-04.
 | Topic | Decision |
 |---|---|
 | Name | Spelled **KunstOS**. |
-| Languages | Portuguese (Brazil) and English are canon. Everything ships in both, more or less. |
+| Languages | English only for now. Portuguese (Brazil) is parked until further notice. |
 | Windows | Tiled, normal niri. No title bars. |
 | How people get it | A downloadable ISO first. A flake for people already on NixOS later, from the same config. |
 | First boot | Only the desktop is installed. The fun tinkering pack installs by default (scripts/kunst-defaults); serious tools (Krita, Blender...) are too heavy for the default and come from kunst-apps. The ISO stays small: default apps download during the install. |

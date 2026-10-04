@@ -8,13 +8,13 @@ Decisions are in docs/decisions.md. The TUI look is in docs/tui.md.
 - [ ] 2. Boot and login screens: made in modules/screens.nix (plain text boot in Gruvbox console colors, boot entries named KunstOS, ReGreet with the painting + dotfiles/regreet/regreet.css); check in the VM
 - [ ] 3. Lock screen and idle: made (dotfiles/hypr/hyprlock.conf, hypridle.conf, Super+Alt+L); check in the VM
 - [ ] 4. kunst-apps rebuilt in Go (Bubble Tea) to the TUI standard: 2x2 pack boxes, details box with the one-sentence description; package Pictogrep from its flake
-- [ ] 5. Fonts: Recursive Mono only in the terminal, Recursive Sans everywhere else (Waybar, mako, rofi)
+- [ ] 5. Fonts: done in modules/fonts.nix and the dotfiles (PxPlus ToshibaSat 9x16 12 pt for most things, whole Oldschool PC Font Pack installed, Recursive for app interfaces, DejaVu + Noto Color Emoji fallbacks); check in the VM
 - [ ] 6. Light mode: Gruvbox Light for kitty, Waybar, mako, rofi and the TUIs, plus a way to switch (can slip to v1.1)
 - [ ] 7. Live ISO that boots into KunstOS
 - [ ] 8. Graphical installer customized for KunstOS (Calamares with KunstOS branding, installs the KunstOS flake); needs an SVG of the K logo
 - [ ] 9. Real hardware test from a USB stick: Wi-Fi, suspend and lock, tablet pressure in Krita
 - [ ] 10. Release docs: manual and tips for people coming from Windows (shortcuts and the rest); audience is tinkerers, not people who only use a browser
-- [ ] 11. Release: README with screenshots, credits and licenses (Shishkin wallpaper, GPL cursor, OFL fonts), ISO and checksum as a GitHub release, push
+- [ ] 11. Release: README with screenshots, credits and licenses (Shishkin wallpaper, GPL cursor, CC BY-SA Oldschool PC fonts, OFL Recursive), ISO and checksum as a GitHub release, push
 
 ## Open right now
 

@@ -19,7 +19,10 @@
         path = "/etc/kunstos/wallpaper.jpg";
         fit = "Cover";
       };
-      GTK.application_prefer_dark_theme = true;
+      GTK = {
+        application_prefer_dark_theme = true;
+        font_name = "PxPlus ToshibaSat 9x16 12";
+      };
     };
     extraCss = ../dotfiles/regreet/regreet.css;
   };

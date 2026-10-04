@@ -12,7 +12,7 @@ Made by Tiago on 2026-10-04.
 | Unfree software | Allowed (Aseprite, Obsidian, NVIDIA drivers). |
 | Hardware | Whatever is easiest for v1: NixOS defaults for GPUs, libinput for tablets. |
 | Updates | Stable NixOS releases. |
-| Fonts | Recursive Mono only in the terminal; Recursive Sans everywhere else. |
+| Fonts | PxPlus ToshibaSat 9x16 at 12 pt for most things (terminal, Waybar, notifications, menus, login, lock). The whole Ultimate Oldschool PC Font Pack is installed. Recursive for app interfaces. Missing glyphs fall back to DejaVu and Noto Color Emoji. |
 | Light mode | Yes, with Gruvbox Light. |
 | App launcher | The rofi grid (search on top, big icons with names). |
 | Animations | None for now. |

@@ -7,7 +7,7 @@
     blue:    #83A598;
     background-color: transparent;
     text-color: @ink;
-    font: "Recursive Sans Linear 13";
+    font: "PxPlus ToshibaSat 9x16 12";
 }
 
 window {
@@ -26,8 +26,8 @@ inputbar {
     spacing: 12px;
     children: [ prompt, entry ];
 }
-prompt { text-color: @yellow; font: "Recursive Sans Linear Bold 18"; }
-entry  { font: "Recursive Sans Linear 18"; placeholder: "Search"; placeholder-color: @ink; }
+prompt { text-color: @yellow; font: "PxPlus ToshibaSat 9x16 24"; }
+entry  { font: "PxPlus ToshibaSat 9x16 24"; placeholder: "Search"; placeholder-color: @ink; }
 
 listview {
     columns: 6;

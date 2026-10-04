@@ -27,3 +27,4 @@
 - [ ] Light mode: Gruvbox Light for kitty, Waybar, mako, rofi, TUIs, plus a way to switch
 - [ ] Installer: graphical, customized for KunstOS
 - [ ] Flake (milestone 1): nixpkgs on stable NixOS 26.05, allowUnfree = true, apps from /etc/nixos/kunstos-apps.json
+- [ ] Release docs: manuals + tips for people coming from Windows (shortcuts etc.); audience = tinkerers, not browser-only users

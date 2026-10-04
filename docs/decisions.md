@@ -1,5 +1,7 @@
 # KunstOS decisions
 
+> **Priority, 2026-10-04:** the system needs to be installed as fast as possible. Period. All other tools get installed later, not during the install. This overrides the default-install rows below: nothing except the system itself goes into the install.
+
 Made by Tiago on 2026-10-04.
 
 | Topic | Decision |

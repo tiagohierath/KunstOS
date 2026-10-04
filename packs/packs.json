@@ -78,6 +78,12 @@
         "pkg": "processing",
         "label": "creative coding",
         "about": "Code sketches that draw and animate, made for artists learning to program."
+      },
+      {
+        "name": "Our Paint",
+        "pkg": "ourpaint",
+        "label": "node brushes",
+        "about": "A small, plain painting program by Wu Yiming whose brushes you build and change with nodes."
       }
     ]
   },

@@ -1,4 +1,4 @@
-/* kunstOS app grid: search bar on top, big icons with names below. Colors: Gruvbox Dark */
+/* KunstOS app grid: search bar on top, big icons with names below. Colors: Gruvbox Dark */
 * {
     bg:      #282828F2;
     cloth:   #3C3836;

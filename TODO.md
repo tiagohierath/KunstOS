@@ -1,14 +1,14 @@
-# kunstOS TODO
+# KunstOS TODO
 
 - [ ] Milestone 1: flake that boots a QEMU VM into niri (floating windows), Krita installed
 - [x] Terminal color palette from the cross-stitch embroidery DROPPED; default = Gruvbox Dark from his own kitty (dotfiles/kitty)
-- [ ] App menu: grid launcher like KDE/Fedora layout (search top, big icons + names); fuzzel cannot grid, prototyping rofi
+- [x] App menu: rofi grid approved (themes/rofi/grid.rasi), bound to Mod+R in the KunstOS niri config
 - [x] fastfetch: KunstOS ASCII logo + config (dotfiles/fastfetch). Logo APPROVED: 13-line serif K, `jp2a --invert --height=13 k-source.jpg`
 - [x] fastfetch 2x version: scrapped (too silly), standard config.jsonc is the only one
 - [x] fastfetch: K inside a circle, tried and dropped; plain K stays
 - [x] Waybar default (approved 2026-10-04): copy of config-niri + dark.css, personal modules swapped for built-ins, square corners, no gray (dotfiles/waybar)
 - [x] Default cursor APPROVED: ComixCursors-KunstOS (Opaque White, shrunk hand + others, solid zoom lens, grab added; cursors/kunst-cursors.py)
-- [ ] Fonts: use ALL of Recursive's variants (Mono/Sans, Casual/Linear, weights, slant, cursive axes) across the system, not just Recursive Mono
+- [ ] Fonts: Recursive Mono only in the terminal, Recursive Sans everywhere else (Waybar, mako, rofi); use its variants
 - [x] Default wallpaper: Shishkin, The Forest Clearing (1896), 4316x2880 original from Wikimedia Commons, wallpapers/default.jpg
 - [ ] Live test: KunstOS wallpaper on Tiago's desktop (fill mode: never stretch, never black borders)
 - [x] Window close animation: TV-off shader tried and dropped; windows close instantly (window-close off)
@@ -21,3 +21,9 @@
 - [ ] TUI standard for KunstOS (docs/tui.md) + rebuild kunst-apps to it, "way way more pretty"
 - [ ] kunst-apps: show a longer description (one sentence) of the highlighted app
 - [x] Our Paint: removed for now (not in nixpkgs; would need its v0.5 Linux AppImage packaged, GPL-3.0)
+- [x] Decisions recorded in docs/decisions.md
+- [x] Unfocused windows fully opaque (removed the 0.75 opacity + blur rule)
+- [x] Tablets: libinput only for v1 (removed the OpenTabletDriver startup line)
+- [ ] Light mode: Gruvbox Light for kitty, Waybar, mako, rofi, TUIs, plus a way to switch
+- [ ] Installer: graphical, customized for KunstOS
+- [ ] Flake (milestone 1): nixpkgs on stable NixOS 26.05, allowUnfree = true, apps from /etc/nixos/kunstos-apps.json

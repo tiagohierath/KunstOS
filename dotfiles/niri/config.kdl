@@ -1,7 +1,9 @@
 // KunstOS niri config: a copy of Tiago's dotfiles/niri/config.kdl.
 // Changed: binds use Mod (Super, or Alt when niri runs in a
-// window), no animations, KunstOS waybar/mako/wallpaper/cursor, no personal
-// scripts, no hardcoded outputs, no plain F-key binds (Krita and Blender use them).
+// window), no animations, KunstOS waybar/mako/wallpaper/cursor, rofi app grid,
+// no see-through unfocused windows, no OpenTabletDriver (libinput handles tablets),
+// no personal scripts, no hardcoded outputs, no plain F-key binds (Krita and
+// Blender use them).
 
 input {
     keyboard {
@@ -72,18 +74,6 @@ window-rule {
     clip-to-geometry true
 }
 
-// Give unfocused windows a translucent, frosted-glass appearance.
-window-rule {
-    match is-focused=false
-
-    opacity 0.75
-    background-effect {
-        blur true
-        noise 0.03
-        saturation 1.2
-    }
-}
-
 // Keep swaybg stationary in Niri's backdrop so workspace transitions do not
 // expose the default black backdrop between vertically stacked workspaces.
 layer-rule {
@@ -95,7 +85,6 @@ spawn-sh-at-startup "swaybg -i $HOME/projects/kunstOS/wallpapers/default.jpg -m 
 spawn-sh-at-startup "mako -c $HOME/projects/kunstOS/dotfiles/mako/config"
 spawn-sh-at-startup "waybar -c $HOME/projects/kunstOS/dotfiles/waybar/config.jsonc -s $HOME/projects/kunstOS/dotfiles/waybar/style.css"
 spawn-at-startup "udiskie"
-spawn-sh-at-startup "systemctl --user start opentabletdriver.service"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 recent-windows {
@@ -109,7 +98,7 @@ binds {
     Mod+Q repeat=false { close-window; }
     Mod+E repeat=false { spawn "kitty" "-e" "yazi"; }
     Mod+V repeat=false { toggle-window-floating; }
-    Mod+R repeat=false { spawn "fuzzel"; }
+    Mod+R repeat=false { spawn-sh "rofi -show drun -show-icons -display-drun Applications -drun-display-format '{name}' -theme $HOME/projects/kunstOS/themes/rofi/grid.rasi"; }
     Mod+Y repeat=false { spawn "firefox"; }
 
     Mod+T repeat=false { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }

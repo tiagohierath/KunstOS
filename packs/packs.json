@@ -31,6 +31,12 @@
         "pkg": "scribus",
         "label": "page layout",
         "about": "Desktop publishing: lay out pages for books, zines and posters, with text frames and print-ready PDF export."
+      },
+      {
+        "name": "Penpot",
+        "pkg": "penpot-desktop",
+        "label": "UI and vector design",
+        "about": "Open source design tool for interfaces, icons and vector art, running as a desktop app."
       }
     ]
   },

@@ -1,6 +1,5 @@
 // KunstOS niri config: a copy of Tiago's dotfiles/niri/config.kdl.
-// Each workspace is a sketchbook and its windows are the pages, so windows tile
-// in the row instead of floating. Changed: binds use Mod (Super, or Alt when niri runs in a
+// Changed: binds use Mod (Super, or Alt when niri runs in a
 // window), no animations, KunstOS waybar/mako/wallpaper/cursor, no personal
 // scripts, no hardcoded outputs, no plain F-key binds (Krita and Blender use them).
 

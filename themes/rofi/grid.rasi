@@ -14,7 +14,6 @@ window {
     width: 960px;
     border: 2px;
     border-color: @blue;
-    border-radius: 16px;
     background-color: @bg;
     padding: 24px;
 }
@@ -23,7 +22,6 @@ mainbox { spacing: 20px; children: [ inputbar, listview ]; }
 
 inputbar {
     background-color: @cloth;
-    border-radius: 10px;
     padding: 12px 16px;
     spacing: 12px;
     children: [ prompt, entry ];
@@ -44,7 +42,6 @@ element {
     orientation: vertical;
     padding: 14px 6px;
     spacing: 10px;
-    border-radius: 12px;
 }
 element selected { background-color: @cloth; border: 2px; border-color: @yellow; }
 element-icon { size: 72px; horizontal-align: 0.5; }

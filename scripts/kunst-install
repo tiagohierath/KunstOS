@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# Installs KunstOS from the live USB onto a whole disk. Asks for the disk, a user name and a password.
+# Wipes the disk, writes hardware-configuration.nix and local.nix next to the KunstOS flake in /etc/nixos,
+# then runs nixos-install. Needs internet.
+set -euo pipefail
+[ "$(id -u)" = 0 ] || exec sudo "$0" "$@"
+
+echo "KunstOS installer. This ERASES the whole disk you pick."
+echo
+lsblk -dpno NAME,SIZE,MODEL -e 7,11
+echo
+read -rp "Disk to erase (for example /dev/sda or /dev/nvme0n1): " disk
+[ -b "$disk" ] || { echo "$disk is not a disk."; exit 1; }
+read -rp "User name (lowercase, no spaces): " user
+[[ "$user" =~ ^[a-z_][a-z0-9_-]*$ ]] || { echo "Use only lowercase letters, numbers, - and _."; exit 1; }
+read -rsp "Password: " pass1; echo
+read -rsp "Password again: " pass2; echo
+[ -n "$pass1" ] && [ "$pass1" = "$pass2" ] || { echo "The passwords don't match."; exit 1; }
+read -rp "Type YES to erase $disk and install: " ok
+[ "$ok" = YES ] || { echo "Nothing was changed."; exit 1; }
+
+# nvme0n1 -> nvme0n1p1, sda -> sda1
+part() { [[ "$disk" =~ [0-9]$ ]] && echo "${disk}p$1" || echo "${disk}$1"; }
+
+wipefs -af "$disk"
+# UEFI: GPT + 1 GB boot partition + systemd-boot. Old BIOS: one partition + GRUB.
+if [ -d /sys/firmware/efi ]; then
+  parted -s "$disk" -- mklabel gpt mkpart ESP fat32 1MiB 1GiB set 1 esp on mkpart root ext4 1GiB 100%
+  udevadm settle
+  mkfs.fat -F 32 -n BOOT "$(part 1)"
+  mkfs.ext4 -F -L kunstos "$(part 2)"
+  mount "$(part 2)" /mnt
+  mkdir -p /mnt/boot
+  mount -o umask=077 "$(part 1)" /mnt/boot
+  boot='boot.loader.systemd-boot.enable = true;'
+else
+  parted -s "$disk" -- mklabel msdos mkpart primary ext4 1MiB 100% set 1 boot on
+  udevadm settle
+  mkfs.ext4 -F -L kunstos "$(part 1)"
+  mount "$(part 1)" /mnt
+  boot="boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.loader.efi.canTouchEfiVariables = lib.mkForce false;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = \"$disk\";"
+fi
+
+# The KunstOS flake, plus the generated hardware config. The generated configuration.nix gives way to KunstOS's.
+nixos-generate-config --root /mnt
+rm /mnt/etc/nixos/configuration.nix
+cp -r /etc/kunstos/flake/. /mnt/etc/nixos/
+chmod -R u+w /mnt/etc/nixos
+
+hash=$(mkpasswd -m sha-512 -s <<<"$pass1")
+cat > /mnt/etc/nixos/local.nix <<EOF
+# Written by kunst-install. Your user, host name and bootloader.
+{ lib, ... }:
+{
+  networking.hostName = "kunstos";
+  users.users.$user = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
+    hashedPassword = "$hash";
+  };
+  $boot
+}
+EOF
+
+nixos-install --no-root-passwd --impure --flake /mnt/etc/nixos#kunstos
+echo
+echo "Done. Take out the USB stick and reboot."

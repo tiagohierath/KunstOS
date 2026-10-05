@@ -11,6 +11,7 @@ let
     mkdir -p $out/bin $out/packs
     cp ${../scripts/kunst-apps} $out/bin/kunst-apps
     cp ${../scripts/kunst-defaults} $out/bin/kunst-defaults
+    cp ${../scripts/kunstos-update} $out/bin/kunstos-update
     cp ${../packs/packs.json} $out/packs/packs.json
     chmod +x $out/bin/*
   '';

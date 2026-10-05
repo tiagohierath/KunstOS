@@ -9,9 +9,27 @@ It's for people who draw, paint, model in 3D, make pixel art, sound and code,
 and who like to open a terminal and change things. It's not for people who only
 use a browser.
 
-**0.1 is a preview.** There's no installer or ISO yet. This release has the
-desktop, its look, the app list and the manual. The installable system comes
-next ([TODO.md](TODO.md)).
+## Install
+
+1. Install NixOS with the official graphical installer from
+   [nixos.org/download](https://nixos.org/download) and pick "No desktop".
+2. Turn it into KunstOS:
+
+   ```
+   nix --extra-experimental-features 'nix-command flakes' run github:tiagohierath/KunstOS/v0.1#install
+   ```
+
+   Your configuration.nix, hardware-configuration.nix, bootloader and user stay.
+   /etc/nixos is backed up to /etc/nixos.pre-kunstos-<date> first.
+3. Reboot.
+
+Update later with `kunstos-update`. To undo, pick an older entry in the boot menu,
+or run `sudo nixos-rebuild switch --rollback`; the backup folder has your old /etc/nixos.
+Secure Boot must be off. Bugs: [GitHub issues](https://github.com/tiagohierath/KunstOS/issues).
+
+KunstOS is an independent project built on NixOS. It is not affiliated with or
+endorsed by the NixOS Foundation. NixOS and the NixOS logo are trademarks of the
+NixOS Foundation.
 
 ## What's in it
 

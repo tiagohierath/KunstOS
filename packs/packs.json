@@ -50,6 +50,12 @@
     "title": "fun tinkering tools",
     "apps": [
       {
+        "name": "btop",
+        "pkg": "btop",
+        "label": "system monitor",
+        "about": "Shows CPU, memory, disks and processes as live graphs in the terminal."
+      },
+      {
         "name": "Aseprite",
         "pkg": "aseprite",
         "label": "pixel art",

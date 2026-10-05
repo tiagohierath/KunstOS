@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Turns a stock NixOS install into KunstOS. Run with:
+#   nix --extra-experimental-features 'nix-command flakes' run github:tiagohierath/KunstOS/v0.1#install
+# Keeps the machine's own configuration.nix (bootloader, user, language) and hardware-configuration.nix,
+# backs up /etc/nixos, writes a small flake that adds KunstOS on top, and rebuilds.
+#   --lite         use the lite variant (for old, low-memory laptops)
+#   --from FLAKE   where KunstOS comes from (default: the v0.1 tag on GitHub; tests use a local path)
+set -euo pipefail
+from="github:tiagohierath/KunstOS/v0.1"
+variant=default
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --lite) variant=lite ;;
+    --from) from="$2"; shift ;;
+    *) echo "Unknown option: $1"; exit 1 ;;
+  esac
+  shift
+done
+[ "$(id -u)" = 0 ] || exec sudo "$0" "$@" --from "$from" $([ $variant = lite ] && echo --lite)
+
+[ -e /etc/NIXOS ] || { echo "This is not NixOS. Install NixOS first: https://nixos.org/download"; exit 1; }
+[ -f /etc/nixos/configuration.nix ] && [ -f /etc/nixos/hardware-configuration.nix ] \
+  || { echo "/etc/nixos/configuration.nix or hardware-configuration.nix is missing."; exit 1; }
+
+users=$(awk -F: '$3 >= 1000 && $3 < 30000 {print $1}' /etc/passwd | tr '\n' ' ')
+echo "KunstOS 0.1 will be added on top of this NixOS."
+echo "Your users stay as they are: $users"
+echo "Your boot menu, disks and language stay as they are."
+read -rp "Type YES to go on: " ok </dev/tty
+[ "$ok" = YES ] || { echo "Nothing was changed."; exit 1; }
+
+backup=/etc/nixos.pre-kunstos-$(date +%Y%m%d-%H%M%S)
+cp -a /etc/nixos "$backup"
+echo "Backup of /etc/nixos: $backup"
+
+cat > /etc/nixos/flake.nix <<EOF
+# KunstOS on top of this machine's NixOS. Written by the KunstOS install command.
+# Your own settings stay in configuration.nix. KunstOS switches are in kunstos.nix.
+# Rebuild: sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+# Update:  kunstos-update
+# A newer KunstOS: change the tag in the kunstos url below, then run kunstos-update.
+{
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+  inputs.kunstos.url = "$from";
+  inputs.kunstos.inputs.nixpkgs.follows = "nixpkgs";
+  outputs = { nixpkgs, kunstos, ... }: {
+    nixosConfigurations.kunstos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ kunstos.nixosModules.$variant ./configuration.nix ./kunstos.nix ];
+    };
+  };
+}
+EOF
+[ -e /etc/nixos/kunstos.nix ] || cat > /etc/nixos/kunstos.nix <<'EOF'
+# KunstOS switches. Change true to false, save, then: sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+{
+  kunstos.coreApps = true; # Firefox, Thunar, Syncthing, LocalSend
+  kunstos.funApps = true;  # the fun tinkering pack (Aseprite, Orca, TIC-80...)
+}
+EOF
+
+nixos-rebuild boot --impure --option experimental-features 'nix-command flakes' --flake /etc/nixos#kunstos
+echo
+echo "Done. Reboot to start KunstOS:  sudo reboot"
+echo "To undo: pick an older entry in the boot menu, or run"
+echo "  sudo nixos-rebuild switch --rollback"
+echo "and to get your old /etc/nixos back:"
+echo "  sudo rm -r /etc/nixos && sudo cp -a $backup /etc/nixos && sudo nixos-rebuild switch"

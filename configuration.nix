@@ -24,7 +24,7 @@
   services.libinput.enable = true;
 
   # Sync files between your own devices, and send files to phones nearby.
-  environment.systemPackages = [ pkgs.syncthing ];
+  environment.systemPackages = [ pkgs.syncthing pkgs.git pkgs.tealdeer ]; # git + tldr are taught in the manual
   programs.localsend.enable = true; # also opens its port in the firewall
 
   environment.variables.EDITOR = "hx";

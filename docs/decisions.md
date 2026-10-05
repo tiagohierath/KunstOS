@@ -32,3 +32,7 @@ Made by Tiago on 2026-10-04.
 ## Manual PDF is canonical (2026-10-05)
 
 The tutorial PDF, docs/manual/pdf/manual.typ, is THE KunstOS manual: page 1 the most important keys, page 2 the most important NixOS commands. PxPlus ToshibaSat 12 pt, English first. modules/manual.nix builds it into every install at /etc/kunstos/manual.pdf, with a "KunstOS Manual" entry in the apps menu (always opens in Firefox, also on the first login; beginners won't know zathura). Change the keys or commands in the system, change this file too.
+
+## ISO builds: at most once a week (2026-10-05)
+
+Never build the ISO more than once a week. Test changes in between with a VM of the system (or nested niri), not a new ISO. Last ISO build: 2026-10-05.

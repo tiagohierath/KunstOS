@@ -28,3 +28,7 @@ Made by Tiago on 2026-10-04.
 | Login screen | Graphical: ReGreet, the wallpaper painting behind a square Gruvbox login box (an exception to TUI-first). |
 | Lock screen | hyprlock: the painting, a big clock, the date and a square password box. |
 | Unfocused windows | Fully opaque, never see-through. |
+
+## Manual PDF is canonical (2026-10-05)
+
+The tutorial PDF, docs/manual/pdf/manual.typ, is THE KunstOS manual: page 1 the most important keys, page 2 the most important NixOS commands. PxPlus ToshibaSat 12 pt, English first. modules/manual.nix builds it into every install at /etc/kunstos/manual.pdf, with a "KunstOS Manual" entry in the apps menu (opens in zathura). Change the keys or commands in the system, change this file too.

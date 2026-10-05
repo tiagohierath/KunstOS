@@ -24,6 +24,7 @@ next ([TODO.md](TODO.md)).
 | Waybar, notifications (mako), app grid (rofi), fastfetch with the K logo | `dotfiles`, `themes/rofi` |
 | Login (ReGreet), lock screen (hyprlock), boot settings | `modules/screens.nix`, `dotfiles/hypr`, `dotfiles/regreet` |
 | `kunst-apps`: pick apps one by one or in packs | `scripts/kunst-apps`, `packs/packs.json` |
+| Manual (canonical): keys + NixOS commands, one PDF | `docs/manual/pdf/manual.typ`, installed at `/etc/kunstos/manual.pdf` |
 | Manual for people coming from Windows | `docs/manual` |
 | Decisions and the look of terminal apps | `docs/decisions.md`, `docs/tui.md` |
 

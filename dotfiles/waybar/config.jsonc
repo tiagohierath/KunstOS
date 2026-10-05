@@ -30,16 +30,16 @@
     "tray": { "icon-size": 16, "spacing": 3 },
 
     "network": {
-        "format-wifi": "📶",
-        "format-ethernet": "🌐",
-        "format-linked": "🌐 {ifname} (No IP)",
-        "format-disconnected": "❌",
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal: <b>{signaldBm}dBm ({signalStrength}%)</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>",
         "interval": 2
     },
 
     "disk": {
-        "format": "💾 {percentage_used}%",
+        "format": "󰋊 {percentage_used}%",
         "path": "/",
         "interval": 3600,
         "tooltip-format": "Disk usage: /"
@@ -49,25 +49,25 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "🔇 {volume}%",
-        "format-icons": { "headphone": "🎧", "default": ["🔈", "🔉", "🔊"] },
+        "format-muted": "󰝟 {volume}%",
+        "format-icons": { "headphone": "󰋋", "default": ["󰕿", "󰖀", "󰕾"] },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
 
     "clock#date": {
-        "format": "📅 {:%a %d %b}",
+        "format": "󰃭 {:%a %d %b}",
         "tooltip-format": "<tt>{calendar}</tt>"
     },
 
     "battery": {
         "states": { "good": 95, "warning": 30, "critical": 20 },
-        "format": "🔋 {capacity}%",
-        "format-charging": "⚡ {capacity}%",
-        "format-plugged": "🔌 {capacity}%"
+        "format": "󰁹 {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%"
     },
 
     "clock": {
-        "format": "🕐 {:%I:%M %p}",
+        "format": "󰥔 {:%I:%M %p}",
         "tooltip": false
     }
 }

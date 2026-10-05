@@ -23,6 +23,10 @@
   # Tablets work through libinput, no OpenTabletDriver.
   services.libinput.enable = true;
 
+  # Sync files between your own devices, and send files to phones nearby.
+  environment.systemPackages = [ pkgs.syncthing ];
+  programs.localsend.enable = true; # also opens its port in the firewall
+
   environment.variables.EDITOR = "hx";
   environment.variables.VISUAL = "hx";
 

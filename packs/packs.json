@@ -37,6 +37,12 @@
         "pkg": "penpot-desktop",
         "label": "UI and vector design",
         "about": "Open source design tool for interfaces, icons and vector art, running as a desktop app."
+      },
+      {
+        "name": "Godot",
+        "pkg": "godot_4",
+        "label": "game engine",
+        "about": "Game engine for 2D and 3D games, with its own editor and scripting language."
       }
     ]
   },
@@ -48,12 +54,6 @@
         "pkg": "aseprite",
         "label": "pixel art",
         "about": "Pixel art and pixel animation, with onion skin and sprite sheet export."
-      },
-      {
-        "name": "Godot",
-        "pkg": "godot_4",
-        "label": "game engine",
-        "about": "Game engine for 2D and 3D games, with its own editor and scripting language."
       },
       {
         "name": "LÖVE",
@@ -157,6 +157,24 @@
         "label": "full-color paint",
         "optional": true,
         "about": "Full-color painting for illustration and drawing, lighter than Krita, and not installed by default."
+      },
+      {
+        "name": "Uxn",
+        "pkg": "uxn",
+        "label": "tiny computer",
+        "about": "The Hundred Rabbits virtual computer that runs their small apps: Left, Noodle, Nasu and more."
+      },
+      {
+        "name": "Mahjongg",
+        "pkg": "gnome-mahjongg",
+        "label": "game",
+        "about": "Match pairs of tiles until the board is empty."
+      },
+      {
+        "name": "Bespoke Synth",
+        "pkg": "bespokesynth",
+        "label": "modular music",
+        "about": "A modular synth and sequencer you patch together on one big canvas."
       }
     ],
     "default": true

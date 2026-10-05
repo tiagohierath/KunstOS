@@ -1,0 +1,28 @@
+# kunstos-lite fallback session: sway drawing with the CPU (pixman), for GPUs niri can't use.
+# Same keys as niri where sway has them.
+set $mod Mod4
+font pango:PxPlus ToshibaSat 9x16 12
+default_border pixel 1
+client.focused #ebdbb2 #282828 #ebdbb2 #ebdbb2 #ebdbb2
+output * bg /etc/kunstos/wallpaper.jpg fill
+seat * xcursor_theme ComixCursors-KunstOS
+input type:keyboard xkb_options caps:swapescape
+bindsym $mod+Return exec kitty
+bindsym $mod+e exec kitty -e yazi
+bindsym $mod+r exec rofi -show drun -show-icons -display-drun Applications -drun-display-format '{name}' -theme /etc/kunstos/rofi/grid.rasi
+bindsym $mod+y exec firefox
+bindsym $mod+q kill
+bindsym $mod+Shift+e exit
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+exec waybar
+exec mako
+exec udiskie

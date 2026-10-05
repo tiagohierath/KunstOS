@@ -1,6 +1,6 @@
 # KunstOS base system: networking, sound, Bluetooth, unfree software, editor.
 # The hardware (disks, bootloader) comes from the installer's hardware-configuration.nix.
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # Turn whole groups of apps off: change true to false, save, then run
   #   sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
@@ -10,8 +10,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # UEFI boot with systemd-boot, the easiest default for v1.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = lib.mkDefault true;
+  boot.loader.efi.canTouchEfiVariables = lib.mkDefault true;
 
   networking.networkmanager.enable = true;
 
@@ -36,5 +36,5 @@
   # Time zone and language are chosen by the installer.
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
-  system.stateVersion = "26.05";
+  system.stateVersion = lib.mkDefault "26.05";
 }

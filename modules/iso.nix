@@ -15,6 +15,7 @@
   xdg.autostart.enable = true;
   services.udisks2.enable = true;
   documentation.man.enable = true; # the manual teaches man
+  fonts.fontconfig.enable = lib.mkForce true; # off on ISOs; without it no app finds the KunstOS fonts
 
   # Skip the login screen once, straight into niri.
   services.greetd.settings.initial_session = {

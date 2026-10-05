@@ -7,6 +7,9 @@ set -euo pipefail
 packs=$(dirname "$(readlink -f "$0")")/../packs/packs.json
 state=/etc/nixos/kunstos-apps.json
 
+# The live ISO has no /etc/nixos flake: nothing to install there.
+[ -e /etc/nixos/flake.nix ] || { echo "This is the live system. Apps install after KunstOS is installed."; exit 0; }
+
 json=$(jq '[.[] | select(.default) | .apps[] | select(.optional | not) | .pkg]' "$packs")
 sudo tee "$state" <<<"$json" >/dev/null
 sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos

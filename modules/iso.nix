@@ -9,6 +9,13 @@
   image.baseName = lib.mkForce "kunstos-live";
   isoImage.volumeID = lib.mkForce "KUNSTOS";
 
+  # The minimal ISO profile turns these off; a desktop needs them.
+  xdg.icons.enable = true;
+  xdg.mime.enable = true;
+  xdg.autostart.enable = true;
+  services.udisks2.enable = true;
+  documentation.man.enable = true; # the manual teaches man
+
   # Skip the login screen once, straight into niri.
   services.greetd.settings.initial_session = {
     command = "niri-session";

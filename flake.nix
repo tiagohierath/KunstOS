@@ -34,7 +34,8 @@
         ./modules/manual.nix
       ];
     };
-    # nixosModules.lite: hook for the kunstos-lite variant (install --lite), not defined yet.
+    # Lite variant for old, low-memory laptops. Placeholder until the lite branch lands.
+    nixosModules.lite = self.nixosModules.default;
 
     # Turn a stock NixOS into KunstOS:
     #   nix --extra-experimental-features 'nix-command flakes' run github:tiagohierath/KunstOS/v0.1#install

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Updates KunstOS: newest NixOS 26.05 packages, then rebuild. The KunstOS version is the tag in /etc/nixos/flake.nix.
 set -euo pipefail
+hostname=$(cat /etc/hostname 2>/dev/null || hostname)
+hostname=${hostname:-kunstos}
 sudo nix flake update --flake /etc/nixos
-sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+sudo nixos-rebuild switch --impure --flake "/etc/nixos#$hostname"

@@ -15,12 +15,6 @@
         "about": "3D modeling, sculpting, animation and rendering, plus video editing."
       },
       {
-        "name": "Pictogrep",
-        "pkg": "pictogrep",
-        "label": "picture search",
-        "about": "Finds your local pictures from a plain-language description and turns references into rough storyboards."
-      },
-      {
         "name": "Inkscape",
         "pkg": "inkscape",
         "label": "vector drawing",

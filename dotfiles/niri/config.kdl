@@ -86,6 +86,8 @@ spawn-at-startup "udiskie"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 // First login: install the fun tinkering pack once (kunst-defaults), then never again.
 spawn-sh-at-startup "test -e ~/.local/state/kunstos/first-login-done || kitty --title kunst-first-login sh -c 'kunst-defaults && mkdir -p ~/.local/state/kunstos && touch ~/.local/state/kunstos/first-login-done; read -p \"Press Enter to close\"'"
+// First login: open the manual in Firefox, once.
+spawn-sh-at-startup "test -e ~/.local/state/kunstos/manual-shown || { mkdir -p ~/.local/state/kunstos && touch ~/.local/state/kunstos/manual-shown && firefox /etc/kunstos/manual.pdf; }"
 
 recent-windows {
     binds {

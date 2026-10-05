@@ -1,5 +1,5 @@
 # The KunstOS manual PDF (docs/manual/pdf/manual.typ), the canonical tutorial.
-# Built here with Typst, installed at /etc/kunstos/manual.pdf, listed in the apps menu.
+# Built here with Typst, installed at /etc/kunstos/manual.pdf, listed in the apps menu. Always opens in Firefox: beginners know a browser.
 { pkgs, ... }:
 let
   manual = pkgs.runCommand "kunstos-manual" { nativeBuildInputs = [ pkgs.typst ]; } ''
@@ -13,12 +13,12 @@ let
     Type=Application
     Name=KunstOS Manual
     Comment=Keys and commands for KunstOS
-    Exec=zathura /etc/kunstos/manual.pdf
+    Exec=firefox /etc/kunstos/manual.pdf
     Icon=help-contents
     EOF
   '';
 in
 {
-  environment.systemPackages = [ manual pkgs.zathura ];
+  environment.systemPackages = [ manual ];
   environment.etc."kunstos/manual.pdf".source = "${manual}/manual.pdf";
 }

@@ -20,7 +20,6 @@ let
 in
 {
   programs.niri.enable = true;
-  programs.thunar.enable = true;
 
   environment.systemPackages = with pkgs; [
     cursor
@@ -38,7 +37,6 @@ in
     wl-clipboard
     brightnessctl
     playerctl
-    firefox
     jq
   ];
 

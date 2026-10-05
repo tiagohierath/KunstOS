@@ -2,6 +2,11 @@
 # The hardware (disks, bootloader) comes from the installer's hardware-configuration.nix.
 { pkgs, ... }:
 {
+  # Turn whole groups of apps off: change true to false, save, then run
+  #   sudo nixos-rebuild switch --impure --flake /etc/nixos#kunstos
+  kunstos.coreApps = true; # Firefox, Thunar, Syncthing, LocalSend
+  kunstos.funApps = true;  # the fun tinkering pack (Aseprite, Orca, TIC-80...)
+
   nixpkgs.config.allowUnfree = true;
 
   # UEFI boot with systemd-boot, the easiest default for v1.
@@ -23,9 +28,7 @@
   # Tablets work through libinput, no OpenTabletDriver.
   services.libinput.enable = true;
 
-  # Sync files between your own devices, and send files to phones nearby.
-  environment.systemPackages = [ pkgs.syncthing pkgs.git pkgs.tealdeer ]; # git + tldr are taught in the manual
-  programs.localsend.enable = true; # also opens its port in the firewall
+  environment.systemPackages = [ pkgs.git pkgs.tealdeer ]; # git + tldr are taught in the manual
 
   environment.variables.EDITOR = "hx";
   environment.variables.VISUAL = "hx";

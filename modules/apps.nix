@@ -14,5 +14,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ kunstTools pkgs.gum pkgs.jq ] ++ map (name: pkgs.${name}) names;
+  environment.systemPackages = [ kunstTools pkgs.gum pkgs.jq ] ++ map (name: lib.getAttrFromPath (lib.splitString "." name) pkgs) names;
 }

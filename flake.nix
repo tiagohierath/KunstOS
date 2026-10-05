@@ -32,6 +32,7 @@
         ./modules/screens.nix
         ./modules/manual.nix
         ./modules/iso.nix
+        ./modules/calamares.nix
       ];
     };
   };

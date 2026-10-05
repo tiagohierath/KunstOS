@@ -166,7 +166,7 @@
       },
       {
         "name": "Mahjongg",
-        "pkg": "gnome-mahjongg",
+        "pkg": "kdePackages.kmahjongg",
         "label": "game",
         "about": "Match pairs of tiles until the board is empty."
       },

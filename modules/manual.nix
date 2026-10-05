@@ -16,6 +16,22 @@ let
     Exec=firefox /etc/kunstos/manual.pdf
     Icon=help-contents
     EOF
+    cat > $out/share/applications/navylilyworks.desktop <<EOF
+    [Desktop Entry]
+    Type=Application
+    Name=navylilyworks
+    Comment=Opens navylily.tv
+    Exec=firefox https://navylily.tv
+    Icon=web-browser
+    EOF
+    cat > $out/share/applications/mono82.desktop <<EOF
+    [Desktop Entry]
+    Type=Application
+    Name=mono82
+    Comment=Minimal FM music sequencer, opens in Firefox
+    Exec=firefox https://mono82.netlify.app
+    Icon=web-browser
+    EOF
   '';
 in
 {

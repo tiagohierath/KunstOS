@@ -33,6 +33,17 @@ Made by Tiago on 2026-10-04.
 
 The tutorial PDF, docs/manual/pdf/manual.typ, is THE KunstOS manual: page 1 the most important keys, page 2 the most important NixOS commands. PxPlus ToshibaSat 12 pt, English first. modules/manual.nix builds it into every install at /etc/kunstos/manual.pdf, with a "KunstOS Manual" entry in the apps menu (always opens in Firefox, also on the first login; beginners won't know zathura). Change the keys or commands in the system, change this file too.
 
-## ISO builds: at most once a week (2026-10-05)
+## ISO builds: no limit (2026-10-05)
 
-Never build the ISO more than once a week. Test changes in between with a VM of the system (or nested niri), not a new ISO. Last ISO build: 2026-10-05.
+The once-a-week limit was dropped. Build the ISO when needed.
+
+## More decisions (2026-10-05)
+
+| Topic | Decision |
+|---|---|
+| Pictogrep and Tiago's software | Added as read-only flake inputs and packaged in KunstOS. They ship in one opt-in "navylilyworks" pack in kunst-apps (Pictogrep, Wortkarten, the rest later), not in the base system. |
+| Disk | The installer defaults to ext4, no encryption. Encryption stays a checkbox. No btrfs; NixOS generations already give system rollback. |
+| Light mode | Slips to v1.1. v1 ships dark only. |
+| Installer (re-checked) | Keep Calamares. NixOS already ships it working; we only rebrand colors, logo and wording. No own TUI installer. |
+| No GNOME | Avoid anything GNOME (apps, games, libraries pulled in by choice). Mahjong stays, as KDE's KMahjongg instead of gnome-mahjongg. |
+| Calamares branding | modules/calamares.nix copies the stock NixOS branding to "kunstos" and changes only names, Gruvbox sidebar colors and the K logo. Never patch the install modules or their configs. |
